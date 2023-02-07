@@ -1,0 +1,26 @@
+html {
+    font-size:10px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #e5e5f7;
+    background: linear-gradient(135deg, #45f79855 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #45f798 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #45f79855 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #45f798 25%, #e5e5f7 25%) 0px 0/ 80px 80px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    width: 50rem;
+    border-radius: 2rem;
+    box-shadow: 0.4rem 0.4rem 2rem #000;
+    transition: all 5s;
+    &:hover {
+        opacity:0;
+    }
+}

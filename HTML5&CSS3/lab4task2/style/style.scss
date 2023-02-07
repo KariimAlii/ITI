@@ -1,0 +1,129 @@
+%centered-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+html {
+    font-size: 10px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    @extend %centered-flexbox;
+    height: 100vh;
+    width: 100vw;
+    background-color: #e5e5f7;
+    background: repeating-linear-gradient( 45deg, #f74545, #f74545 5px, #e5e5f7 5px, #e5e5f7 25px );
+}
+form {
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(0.5rem);
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    @extend %centered-flexbox;
+    flex-direction: column;
+    row-gap: 5rem;
+    box-shadow: 1rem 1rem 2rem rgba(0,0,0,0.6);
+}
+input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    width: 20rem;
+    border-radius: 1rem;
+    border :3px #000 solid;
+    margin:0 2rem;
+    color:#000;
+    font: {
+        size:2rem;
+        weight:700;
+    }
+    &[type=text]:required {
+        ~span::after {
+            content:"Enter Your Name😄";
+            color:green;
+        }
+        font: {
+            size:2rem;
+            weight:700;
+        }
+        
+    }
+    &[type=email]:required {
+        ~span::after {
+            content:"Enter Your Email😄";
+            color:green;
+            font: {
+                size:2rem;
+                weight:700;
+            }
+        }
+        
+        
+    }
+    &:required:valid:focus {   
+        ~span::after {
+            content:"Valid👍";
+            font: {
+                size:2rem;
+                weight:700;
+            }
+            color:green;
+        }
+        background: url("https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg") no-repeat 95% 50% lightgreen;
+        background-size: 2.5rem;
+        border:3px solid green;
+    }
+    &:required:invalid:focus {
+        ~span::after {
+            content:"Invalid👎";
+            font: {
+                size:2rem;
+                weight:700;
+            }
+            color:red;
+        }
+        background: url("https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg") no-repeat 95% 50% lightsalmon;
+        background-size: 2.5rem;
+        border:3px solid red;
+    }
+
+}
+button {
+    background-image: linear-gradient(to left bottom, #cfcfcf, #b6b4c3, #9b9bb7, #7e82ab, #5f6ba0, #506fa9, #3a74b2, #0079b9, #009ad1, #00bbe1, #05dbec, #5ffbf1);
+    padding: 1rem;
+    position: relative;
+    overflow:hidden;
+    border-radius: 1.5rem;
+    transition:all 0.8s;
+    font: {
+        size:2rem;
+        weight:700;
+    }
+    &::before {
+        content:"";
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:-150%;
+        position: absolute;
+        background-color: #eee;
+        transform: skewX(35deg);
+        transition:all 0.8s;
+        opacity: 0.8;
+    }
+    &:hover{
+        &::before {
+            left:200%;
+        }
+        cursor: pointer;
+        transform:translateY(-1rem);
+        box-shadow: 1rem 1rem 1rem rgba(0,0,0,0.6);
+    }
+}
+

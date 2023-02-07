@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Trailer</title>
+</head>
+<body>
+    <div class="video-container">
+        <video src="./assets/trailer.mp4" poster="./assets/superman.jpg"></video>
+        <div class="control-bar">
+            <div class="slider">
+                <input type="range" min="0" max="1" step="0.01" value="0" class="video-range">
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-backward-fast slower-speed"></i>
+                <i class="fa-solid fa-backward-step backward"></i>
+                <i class="fa-solid fa-circle-play player"></i>
+                <i class="fa-solid fa-forward-step forward"></i>
+                <i class="fa-solid fa-forward-fast faster-speed"></i>
+                <i class="fa-solid fa-repeat repeat"></i>
+                <i class="fa-solid fa-volume-high volume"></i>
+                <i class="fas fa-volume-mute volume-mute"></i>
+                <i class="fas fa-expand expand"></i>
+                <i class="fa-solid fa-sliders sliders"></i>
+
+                <input type="range" min="0" max="1" step="0.01" value="1" class="volume-range">
+                <label for="volume-range" id="volume-label" class="volume-label">100%</label>
+
+                <input type="range" min="0.25" max="2" step="0.25" value="1" class="speed-range" id="speed-range">
+                <label for="speed-range" id="speed-label" class="speed-label">1.0</label>
+                
+                <span class="time">
+                    <span class="actual-time"><span class="actual-minutes">0</span>:<span class="actual-seconds">00</span></span>
+                    /
+                    <span class="total-time"><span class="total-minutes">3</span>:<span class="total-seconds">02</span></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="./script/script.js"></script>
+</body>
+</html>
