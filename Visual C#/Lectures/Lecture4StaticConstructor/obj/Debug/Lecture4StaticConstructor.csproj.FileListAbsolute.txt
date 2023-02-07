@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\bin\Debug\Lecture4StaticConstructor.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\bin\Debug\Lecture4StaticConstructor.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\bin\Debug\Lecture4StaticConstructor.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\obj\Debug\Lecture4StaticConstructor.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\obj\Debug\Lecture4StaticConstructor.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\obj\Debug\Lecture4StaticConstructor.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\obj\Debug\Lecture4StaticConstructor.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4StaticConstructor\obj\Debug\Lecture4StaticConstructor.pdb

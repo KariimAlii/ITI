@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\bin\Debug\Lecture5Indexer.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\bin\Debug\Lecture5Indexer.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\bin\Debug\Lecture5Indexer.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\obj\Debug\Lecture5Indexer.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\obj\Debug\Lecture5Indexer.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\obj\Debug\Lecture5Indexer.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\obj\Debug\Lecture5Indexer.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5Indexer\obj\Debug\Lecture5Indexer.pdb

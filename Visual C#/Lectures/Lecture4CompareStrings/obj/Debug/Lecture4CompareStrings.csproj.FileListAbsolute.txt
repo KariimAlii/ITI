@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\bin\Debug\Lecture4CompareStrings.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\bin\Debug\Lecture4CompareStrings.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\bin\Debug\Lecture4CompareStrings.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\obj\Debug\Lecture4CompareStrings.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\obj\Debug\Lecture4CompareStrings.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\obj\Debug\Lecture4CompareStrings.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\obj\Debug\Lecture4CompareStrings.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4CompareStrings\obj\Debug\Lecture4CompareStrings.pdb

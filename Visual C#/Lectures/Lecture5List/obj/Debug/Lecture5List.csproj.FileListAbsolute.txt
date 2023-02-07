@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\bin\Debug\Lecture5List.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\bin\Debug\Lecture5List.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\bin\Debug\Lecture5List.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\obj\Debug\Lecture5List.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\obj\Debug\Lecture5List.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\obj\Debug\Lecture5List.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\obj\Debug\Lecture5List.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture5List\obj\Debug\Lecture5List.pdb

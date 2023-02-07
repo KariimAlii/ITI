@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\bin\Debug\Lecture3.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\bin\Debug\Lecture3.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\bin\Debug\Lecture3.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\obj\Debug\Lecture3.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\obj\Debug\Lecture3.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\obj\Debug\Lecture3.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\obj\Debug\Lecture3.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture3\obj\Debug\Lecture3.pdb

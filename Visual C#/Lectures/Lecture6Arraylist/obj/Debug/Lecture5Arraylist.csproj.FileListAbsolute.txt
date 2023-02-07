@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\obj\Debug\Lecture5Arraylist.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\obj\Debug\Lecture5Arraylist.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\obj\Debug\Lecture5Arraylist.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\bin\Debug\Lecture6Arraylist.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\bin\Debug\Lecture6Arraylist.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\bin\Debug\Lecture6Arraylist.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\obj\Debug\Lecture6Arraylist.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Arraylist\obj\Debug\Lecture6Arraylist.pdb

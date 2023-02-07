@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\bin\Debug\Lab6Task1.exe.config
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\bin\Debug\Lab6Task1.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\bin\Debug\Lab6Task1.pdb
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\obj\Debug\Lab6Task1.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\obj\Debug\Lab6Task1.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\obj\Debug\Lab6Task1.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\obj\Debug\Lab6Task1.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab6Task1\obj\Debug\Lab6Task1.pdb

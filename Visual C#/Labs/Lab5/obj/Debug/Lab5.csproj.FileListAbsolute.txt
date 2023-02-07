@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\bin\Debug\Lab5.exe.config
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\bin\Debug\Lab5.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\bin\Debug\Lab5.pdb
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\obj\Debug\Lab5.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\obj\Debug\Lab5.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\obj\Debug\Lab5.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab5\obj\Debug\Lab5.pdb

@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\bin\Debug\Lecture4Property.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\bin\Debug\Lecture4Property.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\bin\Debug\Lecture4Property.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\obj\Debug\Lecture4Property.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\obj\Debug\Lecture4Property.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\obj\Debug\Lecture4Property.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\obj\Debug\Lecture4Property.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4Property\obj\Debug\Lecture4Property.pdb

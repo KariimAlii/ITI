@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\bin\Debug\Lab2.exe.config
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\bin\Debug\Lab2.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\bin\Debug\Lab2.pdb
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\obj\Debug\Lab2.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\obj\Debug\Lab2.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\obj\Debug\Lab2.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab2\obj\Debug\Lab2.pdb

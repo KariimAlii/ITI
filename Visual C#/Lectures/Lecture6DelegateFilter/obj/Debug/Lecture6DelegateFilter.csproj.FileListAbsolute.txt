@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\bin\Debug\Lecture6DelegateFilter.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\bin\Debug\Lecture6DelegateFilter.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\bin\Debug\Lecture6DelegateFilter.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\obj\Debug\Lecture6DelegateFilter.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\obj\Debug\Lecture6DelegateFilter.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\obj\Debug\Lecture6DelegateFilter.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\obj\Debug\Lecture6DelegateFilter.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6DelegateFilter\obj\Debug\Lecture6DelegateFilter.pdb

@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\bin\Debug\Lecture6Delegate.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\bin\Debug\Lecture6Delegate.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\bin\Debug\Lecture6Delegate.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\obj\Debug\Lecture6Delegate.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\obj\Debug\Lecture6Delegate.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\obj\Debug\Lecture6Delegate.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\obj\Debug\Lecture6Delegate.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture6Delegate\obj\Debug\Lecture6Delegate.pdb

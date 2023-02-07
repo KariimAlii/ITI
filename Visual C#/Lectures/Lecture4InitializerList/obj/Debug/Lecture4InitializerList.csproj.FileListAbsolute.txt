@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\bin\Debug\Lecture4InitializerList.exe.config
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\bin\Debug\Lecture4InitializerList.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\bin\Debug\Lecture4InitializerList.pdb
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\obj\Debug\Lecture4InitializerList.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\obj\Debug\Lecture4InitializerList.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\obj\Debug\Lecture4InitializerList.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\obj\Debug\Lecture4InitializerList.exe
+D:\Professional Web and BI\Visual C#\LecturesApps\Lectures\Lecture4InitializerList\obj\Debug\Lecture4InitializerList.pdb

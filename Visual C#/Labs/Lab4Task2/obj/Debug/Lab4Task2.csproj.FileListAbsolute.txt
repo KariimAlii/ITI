@@ -1,0 +1,8 @@
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\bin\Debug\Lab4Task2.exe.config
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\bin\Debug\Lab4Task2.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\bin\Debug\Lab4Task2.pdb
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\obj\Debug\Lab4Task2.csproj.AssemblyReference.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\obj\Debug\Lab4Task2.csproj.SuggestedBindingRedirects.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\obj\Debug\Lab4Task2.csproj.CoreCompileInputs.cache
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\obj\Debug\Lab4Task2.exe
+D:\Professional Web and BI\Visual C#\LabApps\Labs\Lab4Task2\obj\Debug\Lab4Task2.pdb
