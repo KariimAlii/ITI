@@ -112,6 +112,7 @@ namespace Lab11_File_Explorer
             string name = listBox2.SelectedItem.ToString();
             if (name == ".")
             {
+                //MessageBox.Show("HAey!!!");
                 DirectoryInfo dir = new DirectoryInfo(Path2);
                 if (dir.Parent == null) targetType = Target.Drive;
                 else targetType = Target.Directory;
@@ -123,7 +124,7 @@ namespace Lab11_File_Explorer
                         initializeListBox(listBox2, textBox2);
                         break;
                     case Target.Directory:
-                        Path1 = dir.Parent.FullName;
+                        Path2 = dir.Parent.FullName;
                         adjustListBox(listBox2, Path2, textBox2);
                         break;
                 }
