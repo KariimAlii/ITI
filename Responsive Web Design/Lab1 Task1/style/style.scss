@@ -1,0 +1,113 @@
+
+$back-color:#eee;
+$medium-size:"max-width:900px";
+$small-size:"max-width:500px";
+html {
+    font-size: 10px;
+}
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    // border:1px solid red;
+}
+body {
+    height: 100vh;
+    max-width: 100vw;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+h1 {
+    font:{
+        size:3rem;
+        weight: 800;
+    }
+}
+.navbar {
+    height: 2rem;
+    width: 100%;
+    padding:2rem 0;
+    background-color: $back-color;
+    .nav-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style-type:none;
+        height: 100%;
+        li {
+            font:{
+                size:2rem;
+                weight:700;
+            }
+        }
+    }
+}
+.container {
+    text-align: center;
+    display: flex;
+    column-gap: 10%;
+    height: 20rem;
+    section {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border:0.5rem solid #000;
+        font:{
+            size:2rem;
+            weight:600;
+        }
+        &:nth-of-type(1) {
+            background-color: cyan;
+        }
+        &:nth-of-type(2) {
+            background-color: green;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.25rem 0;
+            width: 100%;
+            background-color: $back-color;
+        }
+    }
+}
+@media screen and ($medium-size) {
+    .navbar {
+        height:fit-content;
+        width: fit-content;
+        padding: 2rem;
+        text-align: center;
+        align-self: center;
+        .nav-list {
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+    }
+    .container {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 60rem;
+        section {
+            height:40%;
+            font-size: 1.5rem;
+        }
+    }
+
+}
+@media screen and ($small-size) {
+    body {
+        background-color: cyan;
+    }
+    .container {
+        section {
+            width: 70%;
+        }
+    }
+}
