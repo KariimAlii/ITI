@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "LAP1HOME.C": "cpp",
+        "LAP1.C": "cpp"
+    }
+}
