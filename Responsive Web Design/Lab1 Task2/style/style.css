@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
 }
-div {
+.container {
     background-color: cyan;
     font-size: 3rem;
     font-weight: 700;
