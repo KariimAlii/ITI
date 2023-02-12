@@ -1,4 +1,4 @@
-### Lab1 Task1
+### Lab1 Task2
 ## Responsive Web Design
 # Using Flexbox
 ![](./screenshot.png)
