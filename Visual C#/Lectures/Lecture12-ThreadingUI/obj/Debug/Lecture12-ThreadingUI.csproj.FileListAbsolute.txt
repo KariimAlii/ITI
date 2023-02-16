@@ -1,0 +1,11 @@
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\bin\Debug\Lecture12-ThreadingUI.exe.config
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\bin\Debug\Lecture12-ThreadingUI.exe
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\bin\Debug\Lecture12-ThreadingUI.pdb
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.csproj.AssemblyReference.cache
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.csproj.SuggestedBindingRedirects.cache
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12_ThreadingUI.Form1.resources
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12_ThreadingUI.Properties.Resources.resources
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.csproj.GenerateResource.cache
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.csproj.CoreCompileInputs.cache
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.exe
+D:\Web\My Github\ITI\Visual C#\Lectures\Lecture12-ThreadingUI\obj\Debug\Lecture12-ThreadingUI.pdb

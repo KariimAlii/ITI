@@ -10,12 +10,11 @@ namespace Lecture11Threading
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            Task t = Task.Run(() => Print());
-            t.Wait(10000);
-            Task.WaitAll(t);
-            Console.ReadLine();
+            Task<int> t = Task.Run(() => { Print(); return 3; });
+
         }
         public static void Print()
         {
@@ -23,6 +22,7 @@ namespace Lecture11Threading
         }
     }
 }
+
 
 
 #region Single Thread
@@ -192,6 +192,58 @@ namespace Lecture11Threading
 //Console.ReadLine();
 //public static void Print()
 //{
+//    for (int i = 0; i < 1000; i++) Console.Write('X');
+//}
+#endregion
+
+#region Task Result
+//static void Main(string[] args)
+//{
+//    Task<int> t = Task.Run(() => { Print(); return 3; });
+//    int Y = t.Result;
+//    Console.WriteLine(Y);
+//    Console.ReadLine();
+//}
+//public static void Print()
+//{
+//    for (int i = 0; i < 1000; i++) Console.Write('X');
+//}
+#endregion
+
+#region Task GetAwaiter
+//static void Main(string[] args)
+//{
+//    Task<int> t = Task.Run(() => { Print(); return 3; });
+//    t.GetAwaiter().OnCompleted(() => Console.WriteLine("Sub-Thread Finished!"));
+//    int y = t.Result;
+//    Console.WriteLine(y);
+//    Console.WriteLine("Hello from Main Thread!");
+//    Console.ReadLine();
+//}
+//public static void Print()
+//{
+//    for (int i = 0; i < 1000; i++) Console.Write('X');
+//} 
+#endregion
+
+
+#region Task Error-Handling
+//static void Main(string[] args)
+//{
+//    try
+//    {
+//        Task<int> t = Task.Run(() => { Print(); return 3; });
+//    }
+//    catch
+//    {
+//        for (int i = 0; i < 1000; i++) Console.Write('Y');
+//        Console.WriteLine("Oooops!! An Error Occured!!:(");
+//    }
+//    Console.ReadLine();
+//}
+//public static void Print()
+//{
+//    throw null;
 //    for (int i = 0; i < 1000; i++) Console.Write('X');
 //}
 #endregion

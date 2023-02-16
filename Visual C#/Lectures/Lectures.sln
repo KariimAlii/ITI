@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture6Events", "Lecture6E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture11Threading", "Lecture11Threading\Lecture11Threading.csproj", "{F04CA2D3-27EF-471E-BA47-FC6C22239786}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lecture12-ThreadingUI", "Lecture12-ThreadingUI\Lecture12-ThreadingUI.csproj", "{F7473E9B-2BD8-4909-938F-FDD753E85D8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +125,10 @@ Global
 		{F04CA2D3-27EF-471E-BA47-FC6C22239786}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F04CA2D3-27EF-471E-BA47-FC6C22239786}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F04CA2D3-27EF-471E-BA47-FC6C22239786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7473E9B-2BD8-4909-938F-FDD753E85D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7473E9B-2BD8-4909-938F-FDD753E85D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7473E9B-2BD8-4909-938F-FDD753E85D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7473E9B-2BD8-4909-938F-FDD753E85D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
