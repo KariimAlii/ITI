@@ -1,0 +1,11 @@
+.nav-link:hover {
+    color:white !important; 
+}
+@media screen and (min-width:768px) {
+    .card-text-head {
+        font-size: 2rem !important;
+    }
+    .card-text-body {
+        font-size: 1rem !important;
+    }
+}
