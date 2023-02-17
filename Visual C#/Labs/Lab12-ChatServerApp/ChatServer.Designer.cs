@@ -32,7 +32,6 @@
             this.ConnectionLabel = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.SendBtn = new System.Windows.Forms.Button();
-            this.ReceiveBtn = new System.Windows.Forms.Button();
             this.NewMessageBox = new System.Windows.Forms.TextBox();
             this.ChatBox = new System.Windows.Forms.ListBox();
             this.StatusBox = new System.Windows.Forms.TextBox();
@@ -80,26 +79,13 @@
             this.SendBtn.BackColor = System.Drawing.Color.Chartreuse;
             this.SendBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SendBtn.Location = new System.Drawing.Point(220, 361);
+            this.SendBtn.Location = new System.Drawing.Point(331, 356);
             this.SendBtn.Name = "SendBtn";
             this.SendBtn.Size = new System.Drawing.Size(113, 37);
             this.SendBtn.TabIndex = 4;
             this.SendBtn.Text = "Send";
             this.SendBtn.UseVisualStyleBackColor = false;
             this.SendBtn.Click += new System.EventHandler(this.SendBtn_Click);
-            // 
-            // ReceiveBtn
-            // 
-            this.ReceiveBtn.BackColor = System.Drawing.Color.Gold;
-            this.ReceiveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceiveBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ReceiveBtn.Location = new System.Drawing.Point(445, 361);
-            this.ReceiveBtn.Name = "ReceiveBtn";
-            this.ReceiveBtn.Size = new System.Drawing.Size(113, 41);
-            this.ReceiveBtn.TabIndex = 5;
-            this.ReceiveBtn.Text = "Receive";
-            this.ReceiveBtn.UseVisualStyleBackColor = false;
-            this.ReceiveBtn.Click += new System.EventHandler(this.ReceiveBtn_Click);
             // 
             // NewMessageBox
             // 
@@ -134,7 +120,6 @@
             this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.ChatBox);
             this.Controls.Add(this.NewMessageBox);
-            this.Controls.Add(this.ReceiveBtn);
             this.Controls.Add(this.SendBtn);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.ConnectionLabel);
@@ -152,7 +137,6 @@
         private System.Windows.Forms.Label ConnectionLabel;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Button SendBtn;
-        private System.Windows.Forms.Button ReceiveBtn;
         private System.Windows.Forms.TextBox NewMessageBox;
         private System.Windows.Forms.ListBox ChatBox;
         private System.Windows.Forms.TextBox StatusBox;

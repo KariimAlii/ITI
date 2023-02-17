@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.ConnectBtn = new System.Windows.Forms.Button();
-            this.ReceiveBtn = new System.Windows.Forms.Button();
             this.SendBtn = new System.Windows.Forms.Button();
             this.DisconnectBtn = new System.Windows.Forms.Button();
             this.NewMessageBox = new System.Windows.Forms.TextBox();
@@ -51,25 +50,12 @@
             this.ConnectBtn.UseVisualStyleBackColor = false;
             this.ConnectBtn.Click += new System.EventHandler(this.ConnectBtn_Click);
             // 
-            // ReceiveBtn
-            // 
-            this.ReceiveBtn.BackColor = System.Drawing.Color.Gold;
-            this.ReceiveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceiveBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ReceiveBtn.Location = new System.Drawing.Point(399, 361);
-            this.ReceiveBtn.Name = "ReceiveBtn";
-            this.ReceiveBtn.Size = new System.Drawing.Size(113, 41);
-            this.ReceiveBtn.TabIndex = 10;
-            this.ReceiveBtn.Text = "Receive";
-            this.ReceiveBtn.UseVisualStyleBackColor = false;
-            this.ReceiveBtn.Click += new System.EventHandler(this.ReceiveBtn_Click);
-            // 
             // SendBtn
             // 
             this.SendBtn.BackColor = System.Drawing.Color.Chartreuse;
             this.SendBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SendBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.SendBtn.Location = new System.Drawing.Point(165, 361);
+            this.SendBtn.Location = new System.Drawing.Point(279, 355);
             this.SendBtn.Name = "SendBtn";
             this.SendBtn.Size = new System.Drawing.Size(113, 37);
             this.SendBtn.TabIndex = 9;
@@ -135,7 +121,6 @@
             this.Controls.Add(this.ConnectionLabel);
             this.Controls.Add(this.ChatBox);
             this.Controls.Add(this.NewMessageBox);
-            this.Controls.Add(this.ReceiveBtn);
             this.Controls.Add(this.SendBtn);
             this.Controls.Add(this.DisconnectBtn);
             this.Controls.Add(this.ConnectBtn);
@@ -150,7 +135,6 @@
         #endregion
 
         private System.Windows.Forms.Button ConnectBtn;
-        private System.Windows.Forms.Button ReceiveBtn;
         private System.Windows.Forms.Button SendBtn;
         private System.Windows.Forms.Button DisconnectBtn;
         private System.Windows.Forms.TextBox NewMessageBox;

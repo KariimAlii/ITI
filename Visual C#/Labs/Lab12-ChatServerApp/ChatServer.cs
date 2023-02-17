@@ -21,6 +21,34 @@ namespace Lab12_ChatServerApp
             //IPAddress ip = IPAddress.Parse("192.168.1.5");
             listener = new TcpListener(ip, 5000);
         }
+
+        private async void ReceiveMessages()
+        {
+            bool flag = true;
+            while (flag)
+            {
+                char[] charArr = new char[100];
+                int x = await reader.ReadAsync(charArr, 0, 100);
+                string str = new string(charArr);
+                //ChatBox.Items.Add(str);
+
+
+                if (str.Contains("ServerDisconnected"))
+                {
+                    flag = false;
+                }
+                else if (str.Contains("ClientStopped"))
+                {
+                    flag = false;
+                }
+                else
+                {
+                    ChatBox.Items.Add(str);
+                }
+
+            }
+
+        }
         private void AcceptConnections()
         {
             while (true)
@@ -28,7 +56,7 @@ namespace Lab12_ChatServerApp
                 TcpClient serverClient = listener.AcceptTcpClient();
 
                 stream = serverClient.GetStream(); //stream.Write()
-
+                Task.Run(() => ReceiveMessages());
                 writer = new StreamWriter(stream);
                 writer.AutoFlush = true;
                 writer.Write("Connected");   //writer.Flush();
@@ -42,22 +70,13 @@ namespace Lab12_ChatServerApp
         private void StopListening()
         {
 
-            writer.Write("Disconnected");
 
+            writer.Write("ServerDisconnected");
             StatusBox.Text = "Server Stopped...";
             StatusBox.BackColor = System.Drawing.Color.IndianRed;
             listener.Stop();
         }
-        //System.Drawing.Color.Chartreuse
-        //System.Drawing.Color.IndianRed
-        //System.Drawing.SystemColors.ButtonHighlight
-        private async void ReceiveMessage()
-        {
-            char[] str = new char[100];
-            int x = await reader.ReadAsync(str, 0, 100);
 
-            ChatBox.Items.Add("Client: " + new string(str));
-        }
         private void ListenBtn_Click(object sender, EventArgs e)
         {
             listener.Start();
@@ -69,16 +88,14 @@ namespace Lab12_ChatServerApp
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             Task.Run(() => StopListening());
+            //StopListening();
         }
 
-        private void ReceiveBtn_Click(object sender, EventArgs e)
-        {
-            ReceiveMessage();
-        }
+
 
         private void SendBtn_Click(object sender, EventArgs e)
         {
-            writer.Write(NewMessageBox.Text);
+            writer.Write("Server: " + NewMessageBox.Text);
             ChatBox.Items.Add("Server: " + NewMessageBox.Text);
             NewMessageBox.Text = "";
         }

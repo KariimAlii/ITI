@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Lab12_ChatClientApp
         StreamReader reader;
         StreamWriter writer;
         NetworkStream stream;
+        bool isConnected;
         public ChatClient()
         {
             InitializeComponent();
@@ -25,12 +27,45 @@ namespace Lab12_ChatClientApp
             StatusBox.Text = new string(str);
             StatusBox.BackColor = System.Drawing.Color.Chartreuse;
         }
-        private async void ReceiveMessage()
+
+        private void Disconnect()
         {
-            char[] str = new char[100];
-            int x = await reader.ReadAsync(str, 0, 100);
-            ChatBox.Items.Add("Server: " + new string(str));
+            isConnected = false;
+            writer.Write("ClientStopped");
+            stream.Close();
+            client.Close();
+            StatusBox.Text = "Disconnected";
+            StatusBox.BackColor = System.Drawing.Color.IndianRed;
         }
+        private async void ReceiveMessages()
+        {
+            bool flag = true;
+            while (flag)
+            {
+                char[] charArr = new char[100];
+                int x = await reader.ReadAsync(charArr, 0, 100);
+                string str = new string(charArr);
+                if (str.Contains("Disconnected"))
+                {
+                    Disconnect();
+                    flag = false;
+                }
+                //else if (!isConnected) 
+                else if (str.Contains("ClientStopped"))
+                {
+                    flag = false;
+                    MessageBox.Show("Stopped at client!");
+                }
+                else
+                {
+                    ChatBox.Items.Add(str);
+                }
+
+            }
+
+        }
+
+
         private void CheckConnection()
         {
             while (true)
@@ -41,8 +76,11 @@ namespace Lab12_ChatClientApp
             }
 
         }
+
         private void ConnectBtn_Click(object sender, EventArgs e)
         {
+
+            isConnected = true;
             client = new TcpClient("192.168.1.5", 5000);
             stream = client.GetStream();
             reader = new StreamReader(stream);
@@ -50,31 +88,37 @@ namespace Lab12_ChatClientApp
             writer.AutoFlush = true;
 
             ReceiveConnectionMessage();
+            Task.Run(() => ReceiveMessages());
+
+
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            client.Close();
-            StatusBox.Text = "Disconnected";
-            StatusBox.BackColor = System.Drawing.Color.IndianRed;
+            Task.Run(() => Disconnect());
+            //Disconnect();
         }
 
         private void SendBtn_Click(object sender, EventArgs e)
         {
-            writer.Write(NewMessageBox.Text);
+            writer.Write("Client: " + NewMessageBox.Text);
             ChatBox.Items.Add("Client: " + NewMessageBox.Text);
             NewMessageBox.Text = "";
         }
 
-        private void ReceiveBtn_Click(object sender, EventArgs e)
-        {
-            ReceiveMessage();
-        }
+
 
         private void ChatClient_Load(object sender, EventArgs e)
         {
-            Task.Run(() => CheckConnection());
+            //Task.Run(() => CheckConnection());
             //CheckConnection();
         }
     }
 }
+
+
+//https://www.geeksforgeeks.org/c-sharp-program-to-find-the-ip-address-of-the-machine/
+//http://csharp.net-informations.com/communications/csharp-chat-server.htm
+//http://csharp.net-informations.com/communications/csharp-chat-client.htm
+//http://csharp.net-informations.com/communications/csharp-ip-address.htm
+//https://learn.microsoft.com/en-us/dotnet/api/system.net.sockets.tcpclient.close?view=net-6.0
