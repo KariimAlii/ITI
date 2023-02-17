@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab6Task3", "Lab6Task3\Lab6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab11-File Explorer", "Lab11-File Explorer\Lab11-File Explorer.csproj", "{CBE786F3-15D8-4DDF-9038-A9472335F5D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab12-ChatServerApp", "Lab12-ChatServerApp\Lab12-ChatServerApp.csproj", "{0B8C0EA3-BADF-44CC-B02F-15EA1013ECBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab12-ChatClientApp", "Lab12-ChatClientApp\Lab12-ChatClientApp.csproj", "{3C0263D0-37C1-4CDD-9BAB-8E32009F37BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{CBE786F3-15D8-4DDF-9038-A9472335F5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBE786F3-15D8-4DDF-9038-A9472335F5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBE786F3-15D8-4DDF-9038-A9472335F5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B8C0EA3-BADF-44CC-B02F-15EA1013ECBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B8C0EA3-BADF-44CC-B02F-15EA1013ECBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B8C0EA3-BADF-44CC-B02F-15EA1013ECBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B8C0EA3-BADF-44CC-B02F-15EA1013ECBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0263D0-37C1-4CDD-9BAB-8E32009F37BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0263D0-37C1-4CDD-9BAB-8E32009F37BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0263D0-37C1-4CDD-9BAB-8E32009F37BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0263D0-37C1-4CDD-9BAB-8E32009F37BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

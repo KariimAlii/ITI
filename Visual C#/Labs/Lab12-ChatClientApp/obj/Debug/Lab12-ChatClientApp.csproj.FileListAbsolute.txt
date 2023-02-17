@@ -1,0 +1,11 @@
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\bin\Debug\Lab12-ChatClientApp.exe.config
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\bin\Debug\Lab12-ChatClientApp.exe
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\bin\Debug\Lab12-ChatClientApp.pdb
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.csproj.AssemblyReference.cache
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.csproj.SuggestedBindingRedirects.cache
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12_ChatClientApp.ChatClient.resources
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12_ChatClientApp.Properties.Resources.resources
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.csproj.GenerateResource.cache
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.csproj.CoreCompileInputs.cache
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.exe
+D:\Web\My Github\ITI\Visual C#\Labs\Lab12-ChatClientApp\obj\Debug\Lab12-ChatClientApp.pdb
