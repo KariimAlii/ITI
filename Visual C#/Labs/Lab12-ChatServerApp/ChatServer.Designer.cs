@@ -42,7 +42,7 @@
             this.ListenBtn.BackColor = System.Drawing.Color.Chartreuse;
             this.ListenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListenBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ListenBtn.Location = new System.Drawing.Point(666, 24);
+            this.ListenBtn.Location = new System.Drawing.Point(666, 39);
             this.ListenBtn.Name = "ListenBtn";
             this.ListenBtn.Size = new System.Drawing.Size(113, 37);
             this.ListenBtn.TabIndex = 0;
@@ -66,11 +66,11 @@
             this.ExitBtn.BackColor = System.Drawing.Color.IndianRed;
             this.ExitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ExitBtn.Location = new System.Drawing.Point(666, 67);
+            this.ExitBtn.Location = new System.Drawing.Point(666, 82);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(113, 41);
             this.ExitBtn.TabIndex = 2;
-            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.Text = "Stop";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(837, 479);
             this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.ChatBox);
             this.Controls.Add(this.NewMessageBox);

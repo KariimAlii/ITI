@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Runtime.InteropServices.ComTypes;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,47 +17,52 @@ namespace Lab12_ChatClientApp
         StreamReader reader;
         StreamWriter writer;
         NetworkStream stream;
+        bool flag = true;
         bool isConnected;
+        SynchronizationContext context;
         public ChatClient()
         {
             InitializeComponent();
-
-        }
-        private async void ReceiveConnectionMessage()
-        {
-            char[] str = new char[100];
-            int x = await reader.ReadAsync(str, 0, 100);
-            StatusBox.Text = new string(str);
-            StatusBox.BackColor = System.Drawing.Color.Chartreuse;
+            context = SynchronizationContext.Current;
         }
 
         private void Disconnect()
         {
             isConnected = false;
             writer.Write("ClientStopped");
-            stream.Close();
-            client.Close();
-            StatusBox.Text = "Disconnected";
-            StatusBox.BackColor = System.Drawing.Color.IndianRed;
+
+            //stream.Close(); //client.GetStream().Close();
+            //client.Close();
+
+            context.Post((object obj) => StatusBox.Text = "Disconnected", null);
+            context.Post((object obj) => StatusBox.BackColor = System.Drawing.Color.IndianRed, null);
         }
         private async void ReceiveMessages()
         {
-            bool flag = true;
+
             while (flag)
             {
                 char[] charArr = new char[100];
                 int x = await reader.ReadAsync(charArr, 0, 100);
                 string str = new string(charArr);
-                if (str.Contains("Disconnected"))
+                if (str.Contains("ServerDisconnected"))
                 {
-                    Disconnect();
+                    //Disconnect();
+                    isConnected = false;
+                    context.Post((object obj) => StatusBox.Text = "Disconnected", null);
+                    context.Post((object obj) => StatusBox.BackColor = System.Drawing.Color.IndianRed, null);
                     flag = false;
                 }
                 //else if (!isConnected) 
-                else if (str.Contains("ClientStopped"))
+                //else if (str.Contains("ClientStopped"))
+                //{
+                //    flag = false;
+                //    MessageBox.Show("Stopped at client!");
+                //}
+                else if (str.Contains("Connected.."))
                 {
-                    flag = false;
-                    MessageBox.Show("Stopped at client!");
+                    context.Post((object obj) => StatusBox.Text = str, null);
+                    context.Post((object obj) => StatusBox.BackColor = System.Drawing.Color.Chartreuse, null);
                 }
                 else
                 {
@@ -87,7 +95,7 @@ namespace Lab12_ChatClientApp
             writer = new StreamWriter(stream);
             writer.AutoFlush = true;
 
-            ReceiveConnectionMessage();
+            flag = true;
             Task.Run(() => ReceiveMessages());
 
 
@@ -95,15 +103,18 @@ namespace Lab12_ChatClientApp
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            Task.Run(() => Disconnect());
-            //Disconnect();
+            //Task.Run(() => Disconnect());
+            flag = false;
+            Disconnect();
         }
 
         private void SendBtn_Click(object sender, EventArgs e)
         {
+
             writer.Write("Client: " + NewMessageBox.Text);
-            ChatBox.Items.Add("Client: " + NewMessageBox.Text);
-            NewMessageBox.Text = "";
+
+            context.Post((object obj) => ChatBox.Items.Add("Client: " + NewMessageBox.Text), null);
+            context.Post((object obj) => NewMessageBox.Text = "", null);
         }
 
 

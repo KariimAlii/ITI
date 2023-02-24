@@ -42,7 +42,7 @@
             this.ConnectBtn.BackColor = System.Drawing.Color.LawnGreen;
             this.ConnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConnectBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ConnectBtn.Location = new System.Drawing.Point(619, 51);
+            this.ConnectBtn.Location = new System.Drawing.Point(620, 34);
             this.ConnectBtn.Name = "ConnectBtn";
             this.ConnectBtn.Size = new System.Drawing.Size(138, 37);
             this.ConnectBtn.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.DisconnectBtn.BackColor = System.Drawing.Color.IndianRed;
             this.DisconnectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DisconnectBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DisconnectBtn.Location = new System.Drawing.Point(619, 118);
+            this.DisconnectBtn.Location = new System.Drawing.Point(620, 89);
             this.DisconnectBtn.Name = "DisconnectBtn";
             this.DisconnectBtn.Size = new System.Drawing.Size(138, 41);
             this.DisconnectBtn.TabIndex = 7;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(826, 488);
             this.Controls.Add(this.StatusBox);
             this.Controls.Add(this.ConnectionLabel);
             this.Controls.Add(this.ChatBox);
