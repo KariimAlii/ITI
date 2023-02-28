@@ -1,0 +1,30 @@
+
+employee {
+    margin: 3rem;
+    display:block;
+    font-size:2rem;
+    border-radius: 1rem;
+    /* background: rgba(255, 255, 255, 0.2); */
+    background-color: cyan;
+    padding: 0.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+name,phones,adresses {
+    display:block;
+}
+phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    column-gap: 3rem;
+}
+phone {
+    margin:2rem;
+}
+adresses {
+    display: flex;
+    flex-direction: column;
+}

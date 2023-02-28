@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="style.css" type="text/css"?>
+<Contacts>
+
+	  <employee>
+		  <name>Karim Ali</name>
+		  <phones>
+			<phone type="home">+201222768979</phone>
+			<phone type="work">+203534567</phone>
+			<phone type="mobile">+201045667789</phone>
+		  </phones>
+		  <adresses>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		  </adresses>
+		  <email>kariimalii96@gmail.com</email>
+	  
+	  </employee>
+	  
+	  	  <employee>
+		  <name>Karim Ali</name>
+		  <phones>
+			<phone type="home">+201222768979</phone>
+			<phone type="work">+203534567</phone>
+			<phone type="mobile">+201045667789</phone>
+		  </phones>
+		  <adresses>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>Cairo</street>
+				<building>Jebril</building>
+				<number>10</number>
+				<region>Sidi Beshr</region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		  </adresses>
+		  <email>kariimalii96@gmail.com</email>
+	  
+	  </employee>
+
+</Contacts>

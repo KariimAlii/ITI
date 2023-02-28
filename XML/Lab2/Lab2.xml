@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Library>
+
+	
+	<location>Al Raml Station</location>
+	<description>A historical library containing a lot of historical books and references</description>
+	<librarian>Hoda ElMenshawy</librarian>
+	<books>
+		<book>
+			<title>Introduction to Ancient Egypt</title>
+			<ISBN>123</ISBN>
+			<author>Ahmed Tawfik</author>
+			<preface>Let's Wonder How Ancient Egypt was..</preface>
+			<parts>
+				<part1 title="First and Secont Families">
+					<chapter1 title="Production">
+						<summary>A brief Summary on Manufacture and Production in Ancient Egypt</summary>
+						<sections>
+							<section1>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section1>
+							<section2>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section2>
+						</sections>
+					</chapter1>
+				</part1>
+				<part2>
+					<chapter1 title="Production">
+						<summary>A brief Summary on Manufacture and Production in Ancient Egypt</summary>
+						<sections>
+							<section1>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section1>
+							<section2>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section2>
+						</sections>
+					</chapter1>
+				</part2>
+				<part3>
+					<chapter1 title="Production">
+						<summary>A brief Summary on Manufacture and Production in Ancient Egypt</summary>
+						<sections>
+							<section1>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section1>
+							<section2>
+								<paragraph1>They had wheels</paragraph1>
+								<paragraph2>They had pyramids</paragraph2>
+								<paragraph3>They had cats</paragraph3>
+							</section2>
+						</sections>
+					</chapter1>
+				</part3>
+			</parts>
+		</book>
+	
+	
+	
+	</books>
+	
+	
+
+
+
+
+
+
+
+
+
+
+</Library>
