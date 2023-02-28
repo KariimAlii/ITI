@@ -10,3 +10,15 @@ D:\Web\My Github\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.cache
 D:\Web\My Github\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
 D:\Web\My Github\Exam\Exam\obj\Debug\Exam.exe
 D:\Web\My Github\Exam\Exam\obj\Debug\Exam.pdb
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\bin\Debug\Exam.exe.config
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\bin\Debug\Exam.exe
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\bin\Debug\Exam.pdb
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.csproj.AssemblyReference.cache
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.csproj.SuggestedBindingRedirects.cache
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.Form1.resources
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.Properties.Resources.resources
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.StyleDialogBox.resources
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.csproj.GenerateResource.cache
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.csproj.CoreCompileInputs.cache
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.exe
+D:\Web\My Github\ITI\Visual C#\Exam\Exam\obj\Debug\Exam.pdb
