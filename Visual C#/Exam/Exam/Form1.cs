@@ -249,6 +249,11 @@ namespace Exam
             else isFreehandRequired = true;
         }
 
+        private void formatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             if (isMouseDown == true && isFreehandRequired)
