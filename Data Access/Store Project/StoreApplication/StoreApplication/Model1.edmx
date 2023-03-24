@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="StoreAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Buy">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+            <PropertyRef Name="Store_ID" />
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Product_Quantity" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telephone_Num" Type="char" MaxLength="9" />
+          <Property Name="Fax" Type="char" MaxLength="10" />
+          <Property Name="Mobile_Num" Type="char" MaxLength="11" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Website" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manufacture_Date" Type="date" Nullable="false" />
+          <Property Name="Expiration_Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product-MeasuringUnit">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+            <PropertyRef Name="Measuring_Unit" />
+          </Key>
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Measuring_Unit" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReleasePermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Supplier_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Product_Quantity" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Manager_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store-Product">
+          <Key>
+            <PropertyRef Name="Store_ID" />
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Telephone_Num" Type="char" MaxLength="9" />
+          <Property Name="Fax" Type="char" MaxLength="10" />
+          <Property Name="Mobile_Num" Type="char" MaxLength="11" />
+          <Property Name="Email" Type="varchar" MaxLength="20" />
+          <Property Name="Website" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="SupplyPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Store_ID" Type="int" Nullable="false" />
+          <Property Name="Supplier_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Product_Quantity" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Manufacture_Date" Type="date" Nullable="false" />
+          <Property Name="Expiration_Duration" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Transfer Permission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FromStore_ID" Type="int" Nullable="false" />
+          <Property Name="ToStore_ID" Type="int" Nullable="false" />
+          <Property Name="Supplier_ID" Type="int" Nullable="false" />
+          <Property Name="Product_ID" Type="int" Nullable="false" />
+          <Property Name="Manufacture_Date" Type="date" Nullable="false" />
+          <Property Name="Expiration_Duration" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Buy_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buy_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buy_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product-MeasuringUnit_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product-MeasuringUnit" Type="Self.Product-MeasuringUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product-MeasuringUnit">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store-Product_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Store-Product" Type="Self.Store-Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Store-Product">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Store-Product_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Store-Product" Type="Self.Store-Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Store-Product">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer Permission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Transfer Permission" Type="Self.Transfer Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer Permission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer Permission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Transfer Permission" Type="Self.Transfer Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer Permission">
+              <PropertyRef Name="FromStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer Permission_Store1">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Transfer Permission" Type="Self.Transfer Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer Permission">
+              <PropertyRef Name="ToStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer Permission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Transfer Permission" Type="Self.Transfer Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer Permission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="StoreAppModelStoreContainer">
+          <EntitySet Name="Buy" EntityType="Self.Buy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product-MeasuringUnit" EntityType="Self.Product-MeasuringUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReleasePermission" EntityType="Self.ReleasePermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Store-Product" EntityType="Self.Store-Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SupplyPermission" EntityType="Self.SupplyPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transfer Permission" EntityType="Self.Transfer Permission" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Buy_Customer" Association="Self.FK_Buy_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Buy" EntitySet="Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buy_Product" Association="Self.FK_Buy_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Buy" EntitySet="Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buy_Store" Association="Self.FK_Buy_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Buy" EntitySet="Buy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product-MeasuringUnit_Product" Association="Self.FK_Product-MeasuringUnit_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Product-MeasuringUnit" EntitySet="Product-MeasuringUnit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Product" Association="Self.FK_ReleasePermission_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Store" Association="Self.FK_ReleasePermission_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Supplier" Association="Self.FK_ReleasePermission_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store-Product_Product" Association="Self.FK_Store-Product_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Store-Product" EntitySet="Store-Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Store-Product_Store" Association="Self.FK_Store-Product_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Store-Product" EntitySet="Store-Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Product" Association="Self.FK_SupplyPermission_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Store" Association="Self.FK_SupplyPermission_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Supplier" Association="Self.FK_SupplyPermission_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer Permission_Product" Association="Self.FK_Transfer Permission_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Transfer Permission" EntitySet="Transfer Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer Permission_Store" Association="Self.FK_Transfer Permission_Store">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Transfer Permission" EntitySet="Transfer Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer Permission_Store1" Association="Self.FK_Transfer Permission_Store1">
+            <End Role="Store" EntitySet="Store" />
+            <End Role="Transfer Permission" EntitySet="Transfer Permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer Permission_Supplier" Association="Self.FK_Transfer Permission_Supplier">
+            <End Role="Supplier" EntitySet="Supplier" />
+            <End Role="Transfer Permission" EntitySet="Transfer Permission" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StoreAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Buy">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+            <PropertyRef Name="Store_ID" />
+            <PropertyRef Name="Product_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Buy_Customer" FromRole="Buy" ToRole="Customer" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Buy_Product" FromRole="Buy" ToRole="Product" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Buy_Store" FromRole="Buy" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone_Num" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Mobile_Num" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Buys" Relationship="Self.FK_Buy_Customer" FromRole="Customer" ToRole="Buy" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manufacture_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Expiration_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Buys" Relationship="Self.FK_Buy_Product" FromRole="Product" ToRole="Buy" />
+          <NavigationProperty Name="Product_MeasuringUnit" Relationship="Self.FK_Product_MeasuringUnit_Product" FromRole="Product" ToRole="Product_MeasuringUnit" />
+          <NavigationProperty Name="ReleasePermissions" Relationship="Self.FK_ReleasePermission_Product" FromRole="Product" ToRole="ReleasePermission" />
+          <NavigationProperty Name="SupplyPermissions" Relationship="Self.FK_SupplyPermission_Product" FromRole="Product" ToRole="SupplyPermission" />
+          <NavigationProperty Name="Transfer_Permission" Relationship="Self.FK_Transfer_Permission_Product" FromRole="Product" ToRole="Transfer_Permission" />
+          <NavigationProperty Name="Stores" Relationship="Self.Store_Product" FromRole="Product" ToRole="Store" />
+        </EntityType>
+        <EntityType Name="Product_MeasuringUnit">
+          <Key>
+            <PropertyRef Name="Product_ID" />
+            <PropertyRef Name="Measuring_Unit" />
+          </Key>
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Measuring_Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_MeasuringUnit_Product" FromRole="Product_MeasuringUnit" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ReleasePermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Supplier_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ReleasePermission_Product" FromRole="ReleasePermission" ToRole="Product" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_ReleasePermission_Store" FromRole="ReleasePermission" ToRole="Store" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_ReleasePermission_Supplier" FromRole="ReleasePermission" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Manager_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Buys" Relationship="Self.FK_Buy_Store" FromRole="Store" ToRole="Buy" />
+          <NavigationProperty Name="ReleasePermissions" Relationship="Self.FK_ReleasePermission_Store" FromRole="Store" ToRole="ReleasePermission" />
+          <NavigationProperty Name="SupplyPermissions" Relationship="Self.FK_SupplyPermission_Store" FromRole="Store" ToRole="SupplyPermission" />
+          <NavigationProperty Name="Transfer_Permission" Relationship="Self.FK_Transfer_Permission_Store" FromRole="Store" ToRole="Transfer_Permission" />
+          <NavigationProperty Name="Transfer_Permission1" Relationship="Self.FK_Transfer_Permission_Store1" FromRole="Store" ToRole="Transfer_Permission" />
+          <NavigationProperty Name="Products" Relationship="Self.Store_Product" FromRole="Store" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telephone_Num" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Mobile_Num" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ReleasePermissions" Relationship="Self.FK_ReleasePermission_Supplier" FromRole="Supplier" ToRole="ReleasePermission" />
+          <NavigationProperty Name="SupplyPermissions" Relationship="Self.FK_SupplyPermission_Supplier" FromRole="Supplier" ToRole="SupplyPermission" />
+          <NavigationProperty Name="Transfer_Permission" Relationship="Self.FK_Transfer_Permission_Supplier" FromRole="Supplier" ToRole="Transfer_Permission" />
+        </EntityType>
+        <EntityType Name="SupplyPermission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Store_ID" Type="Int32" Nullable="false" />
+          <Property Name="Supplier_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Manufacture_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Expiration_Duration" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_SupplyPermission_Product" FromRole="SupplyPermission" ToRole="Product" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_SupplyPermission_Store" FromRole="SupplyPermission" ToRole="Store" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_SupplyPermission_Supplier" FromRole="SupplyPermission" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transfer_Permission">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FromStore_ID" Type="Int32" Nullable="false" />
+          <Property Name="ToStore_ID" Type="Int32" Nullable="false" />
+          <Property Name="Supplier_ID" Type="Int32" Nullable="false" />
+          <Property Name="Product_ID" Type="Int32" Nullable="false" />
+          <Property Name="Manufacture_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Expiration_Duration" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Transfer_Permission_Product" FromRole="Transfer_Permission" ToRole="Product" />
+          <NavigationProperty Name="Store" Relationship="Self.FK_Transfer_Permission_Store" FromRole="Transfer_Permission" ToRole="Store" />
+          <NavigationProperty Name="Store1" Relationship="Self.FK_Transfer_Permission_Store1" FromRole="Transfer_Permission" ToRole="Store" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_Transfer_Permission_Supplier" FromRole="Transfer_Permission" ToRole="Supplier" />
+        </EntityType>
+        <Association Name="FK_Buy_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Customer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buy_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buy_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Buy" Type="Self.Buy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Buy">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_MeasuringUnit_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product_MeasuringUnit" Type="Self.Product_MeasuringUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Product_MeasuringUnit">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer_Permission_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Transfer_Permission" Type="Self.Transfer_Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer_Permission">
+              <PropertyRef Name="Product_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleasePermission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="ReleasePermission" Type="Self.ReleasePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ReleasePermission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Store_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer_Permission_Store">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Transfer_Permission" Type="Self.Transfer_Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer_Permission">
+              <PropertyRef Name="FromStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer_Permission_Store1">
+          <End Role="Store" Type="Self.Store" Multiplicity="1" />
+          <End Role="Transfer_Permission" Type="Self.Transfer_Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Store">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer_Permission">
+              <PropertyRef Name="ToStore_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplyPermission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="SupplyPermission" Type="Self.SupplyPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SupplyPermission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transfer_Permission_Supplier">
+          <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+          <End Role="Transfer_Permission" Type="Self.Transfer_Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Transfer_Permission">
+              <PropertyRef Name="Supplier_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Store_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <End Role="Store" Type="Self.Store" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="StoreAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Buys" EntityType="Self.Buy" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Product_MeasuringUnit" EntityType="Self.Product_MeasuringUnit" />
+          <EntitySet Name="ReleasePermissions" EntityType="Self.ReleasePermission" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="SupplyPermissions" EntityType="Self.SupplyPermission" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Transfer_Permissions" EntityType="Self.Transfer_Permission" />
+          <AssociationSet Name="FK_Buy_Customer" Association="Self.FK_Buy_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Buy" EntitySet="Buys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buy_Product" Association="Self.FK_Buy_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Buy" EntitySet="Buys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buy_Store" Association="Self.FK_Buy_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Buy" EntitySet="Buys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_MeasuringUnit_Product" Association="Self.FK_Product_MeasuringUnit_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Product_MeasuringUnit" EntitySet="Product_MeasuringUnit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Product" Association="Self.FK_ReleasePermission_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Product" Association="Self.FK_SupplyPermission_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer_Permission_Product" Association="Self.FK_Transfer_Permission_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Transfer_Permission" EntitySet="Transfer_Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Store" Association="Self.FK_ReleasePermission_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleasePermission_Supplier" Association="Self.FK_ReleasePermission_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="ReleasePermission" EntitySet="ReleasePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Store" Association="Self.FK_SupplyPermission_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer_Permission_Store" Association="Self.FK_Transfer_Permission_Store">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Transfer_Permission" EntitySet="Transfer_Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer_Permission_Store1" Association="Self.FK_Transfer_Permission_Store1">
+            <End Role="Store" EntitySet="Stores" />
+            <End Role="Transfer_Permission" EntitySet="Transfer_Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplyPermission_Supplier" Association="Self.FK_SupplyPermission_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="SupplyPermission" EntitySet="SupplyPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transfer_Permission_Supplier" Association="Self.FK_Transfer_Permission_Supplier">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Transfer_Permission" EntitySet="Transfer_Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="Store_Product" Association="Self.Store_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(StoreAppModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(StoreAppModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StoreAppModelStoreContainer" CdmEntityContainer="StoreAppEntities">
+          <EntitySetMapping Name="Buys">
+            <EntityTypeMapping TypeName="StoreAppModel.Buy">
+              <MappingFragment StoreEntitySet="Buy">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="StoreAppModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Telephone_Num" ColumnName="Telephone_Num" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile_Num" ColumnName="Mobile_Num" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="StoreAppModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Manufacture_Date" ColumnName="Manufacture_Date" />
+                <ScalarProperty Name="Expiration_Date" ColumnName="Expiration_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_MeasuringUnit">
+            <EntityTypeMapping TypeName="StoreAppModel.Product_MeasuringUnit">
+              <MappingFragment StoreEntitySet="Product-MeasuringUnit">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Measuring_Unit" ColumnName="Measuring_Unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReleasePermissions">
+            <EntityTypeMapping TypeName="StoreAppModel.ReleasePermission">
+              <MappingFragment StoreEntitySet="ReleasePermission">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="StoreAppModel.Store">
+              <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Manager_Name" ColumnName="Manager_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="StoreAppModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Telephone_Num" ColumnName="Telephone_Num" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mobile_Num" ColumnName="Mobile_Num" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplyPermissions">
+            <EntityTypeMapping TypeName="StoreAppModel.SupplyPermission">
+              <MappingFragment StoreEntitySet="SupplyPermission">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Store_ID" ColumnName="Store_ID" />
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Product_Quantity" ColumnName="Product_Quantity" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Manufacture_Date" ColumnName="Manufacture_Date" />
+                <ScalarProperty Name="Expiration_Duration" ColumnName="Expiration_Duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="StoreAppModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transfer_Permissions">
+            <EntityTypeMapping TypeName="StoreAppModel.Transfer_Permission">
+              <MappingFragment StoreEntitySet="Transfer Permission">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FromStore_ID" ColumnName="FromStore_ID" />
+                <ScalarProperty Name="ToStore_ID" ColumnName="ToStore_ID" />
+                <ScalarProperty Name="Supplier_ID" ColumnName="Supplier_ID" />
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Manufacture_Date" ColumnName="Manufacture_Date" />
+                <ScalarProperty Name="Expiration_Duration" ColumnName="Expiration_Duration" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Store_Product" TypeName="StoreAppModel.Store_Product" StoreEntitySet="Store-Product">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="ID" ColumnName="Product_ID" />
+            </EndProperty>
+            <EndProperty Name="Store">
+              <ScalarProperty Name="ID" ColumnName="Store_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="StoreAppModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="StoreAppModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="StoreAppModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="StoreAppModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StoreAppModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="StoreAppModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StoreAppModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="StoreAppModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="StoreAppModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
