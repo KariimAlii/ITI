@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Add</title>
+    </head>
+    <body>
+    <form asp-action="Add" asp-controller="Department" method="post">
+            <label>Department ID:</label>
+            <input type="text" name="department.Id" />
+            <br />
+            <label>Department Name:</label>
+            <input type="text" name="department.Name" />
+            <br />
+            <label>Department Manager Name:</label>
+            <input type="text" name="department.ManagerName" />
+            <br />
+            <input type="submit" value="Add" class="btn btn-success"/>
+        </form>
+    </body>
+</html>
+@*asp-action="Add" asp-controller="Department"*@
+@*action="/Department/Add"*@

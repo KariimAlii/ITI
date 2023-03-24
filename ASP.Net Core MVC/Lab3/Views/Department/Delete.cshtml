@@ -1,0 +1,21 @@
+﻿@model Department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h1 class="alert alert-danger">
+        Are you sure you want to delete department: @Model.Name ?
+    </h1>
+    <form method="post">
+        <input type="submit" value="Confirm" class="btn btn-danger"/>
+    </form>
+</body>
+</html>

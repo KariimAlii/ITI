@@ -1,0 +1,27 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <form asp-action="create" asp-controller="student" method="post">
+        <label>ID:</label>
+        <input asp-for="Id" />
+        <br />
+        <label>Name:</label>
+        <input asp-for="Name" />
+        <br />
+        <label>Grade:</label>
+        <input asp-for="Grade" />
+        <br />
+        <input type="submit" value="Add"/>
+    </form>
+</body>
+</html>
