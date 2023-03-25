@@ -1,24 +1,18 @@
 ﻿@model Student
 @{
-    Layout = null;
+    ViewBag.Title = $"Edit Student {Model.Name} Details";
 }
 
-<!DOCTYPE html>
-    
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
-    <form method="post">
-        <label>Name:</label>
-        <input asp-for="Name" />
-        <br />
-        <label>Grade:</label>
-        <input asp-for="Grade" />
-        <br />
-        <input type="submit" value="Update" />
-    </form>
-</body>
-</html>
+<form method="post">
+    <label asp-for="Name">Name:</label>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Grade">Grade:</label>
+    <input asp-for="Grade" />
+    <br />
+    <input type="submit" value="Update" />
+</form>
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
+

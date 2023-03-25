@@ -1,21 +1,13 @@
 ﻿@model Student
 @{
-    Layout = null;
+    ViewBag.Title = $"Delete Student {@Model.Name}";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-    <h1>
-        Are you sure you want to delete student : @Model.Name ?
-    </h1>
-    <form method="post">
-        <input type="submit" value="confirm" class="btn btn-danger"/>
-    </form>
-</body>
-</html>
+<h1>
+    Are you sure you want to delete student : @Model.Name ?
+</h1>
+<form method="post">
+    <input type="submit" value="confirm" class="btn btn-danger"/>
+</form>
+

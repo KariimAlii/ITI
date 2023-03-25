@@ -1,6 +1,6 @@
 ﻿@model Department
 @{
-    Layout = null;
+    ViewBag.Title = $"Edit {@Model.Name} Department";
 }
 
 <!DOCTYPE html>
@@ -12,13 +12,16 @@
 </head>
 <body>
     <form method="post">
-        <label>Department Name:</label>
+        <label asp-for="Name">Department Name:</label>
         <input asp-for="Name" />
         <br />
-        <label>Department Manager Name:</label>
+        <label asp-for="ManagerName">Department Manager Name:</label>
         <input asp-for="ManagerName" />
         <br />
         <input type="submit" value="update" class="btn btn-success" />
     </form>
 </body>
 </html>
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}

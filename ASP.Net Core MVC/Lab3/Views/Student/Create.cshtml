@@ -1,27 +1,23 @@
 ﻿@model Student
 @{
-    Layout = null;
+    ViewBag.Title = $"Add a Student";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
-    <form asp-action="create" asp-controller="student" method="post">
-        <label>ID:</label>
-        <input asp-for="Id" />
-        <br />
-        <label>Name:</label>
-        <input asp-for="Name" />
-        <br />
-        <label>Grade:</label>
-        <input asp-for="Grade" />
-        <br />
-        <input type="submit" value="Add"/>
-    </form>
-</body>
-</html>
+<form asp-action="create" asp-controller="student" method="post">
+    <label asp-for="Id">ID:</label>
+    <input asp-for="Id" />
+    <br />
+    <label asp-for="Name">Name:</label>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Grade">Grade:</label>
+    <input asp-for="Grade" />
+    <br />
+    <input type="submit" value="Add"/>
+</form>
+
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
