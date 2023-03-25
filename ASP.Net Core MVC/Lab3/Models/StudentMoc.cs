@@ -7,9 +7,9 @@ namespace Lab3.Models
         //List<Student> students = new List<Student>(); //===> No Data
         static List<Student> students = new List<Student>()
         {
-            new Student() { Id = 1, Name = "Karim", Grade = 77 },
-            new Student() { Id = 2, Name = "Mohamed", Grade = 88 },
-            new Student() { Id = 3, Name = "Ahmed", Grade = 99 },
+            new Student() { Id = 1, Name = "Karim", Grade = 77 ,Email = "k@gmail.com"},
+            new Student() { Id = 2, Name = "Mohamed", Grade = 88, Email="i@hotmail.com" },
+            new Student() { Id = 3, Name = "Ahmed", Grade = 99 , Email="n@yahoo.com" },
         };
         public List<Student> GetAllStudents()
         {
@@ -36,6 +36,10 @@ namespace Lab3.Models
         {
             Student old = students.FirstOrDefault(s => s.Id == id);
             students.Remove(old);
+        }
+        public Student isExists(string email)
+        {
+            return students.FirstOrDefault(s => s.Email == email);
         }
     }
 }

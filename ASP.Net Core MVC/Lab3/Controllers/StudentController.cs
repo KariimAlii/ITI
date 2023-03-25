@@ -9,9 +9,9 @@ namespace Lab3.Controllers
         public IActionResult Index()
         {
             return View(db.GetAllStudents());
-            #region Create the ViewResult yourself 
+            #region Create the ViewResult yourself
             //ViewData.Model = db.GetAllStudents();
-            //return new ViewResult() { ViewName = "Index", ViewData = ViewData }; 
+            //return new ViewResult() { ViewName = "Index", ViewData = ViewData };
             #endregion
         }
         [HttpGet]
@@ -22,9 +22,12 @@ namespace Lab3.Controllers
         [HttpPost]
         public IActionResult Create(Student newStudent)
         {
-            db.AddStudent(newStudent);
-            //return View("Index", db.GetAllStudents());
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                db.AddStudent(newStudent);
+                return RedirectToAction("Index");
+            }
+            else return View("Index", db.GetAllStudents());
         }
 
         public IActionResult Details(int? id)
@@ -62,6 +65,11 @@ namespace Lab3.Controllers
             if (id is null) return BadRequest();
             db.DeleteStudent(id.Value);
             return RedirectToAction("Index");
+        }
+        public IActionResult CheckEmail(string email, string Name,int Grade)
+        {
+            if (db.isExists(email) != null) return Json($"You can use email {Name}-{Grade}@iti.gov.eg"); // the email already exists
+            else return Json(true);
         }
 
     }
