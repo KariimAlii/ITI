@@ -13,13 +13,14 @@ namespace Lab3.Models
         public string Name { get; set; }
         [Range(0, 50)]
         public int Grade { get; set; }
-        //[RegularExpression(@"^\\S+@\\S+\\.\\S+$")]
-        //[MyEmailValidator(ErrorMessage = "This email doesnt match our email constrains")]
-        [Remote("CheckEmail", "Student", AdditionalFields = "Name,Grade")]
+
+        [MyEmailValidator(ErrorMessage = "This email doesnt match our email constrains")]
         public string Email { get; set; }
+
         [Required, StringLength(10, MinimumLength = 3)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         [Compare("Password")]
         [DataType(DataType.Password)]
         [NotMapped]
@@ -52,4 +53,7 @@ namespace Lab3.Models
     //    // https://uibakery.io/regex-library/email-regex-csharp
     //}
 
+    //=======Email=======//
+    //[RegularExpression(@"^\\S+@\\S+\\.\\S+$")]
+    //[Remote("CheckEmail", "Student", AdditionalFields = "Name,Grade")]
 }

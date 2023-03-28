@@ -27,7 +27,7 @@ namespace Lab3.Controllers
                 db.AddStudent(newStudent);
                 return RedirectToAction("Index");
             }
-            else return View("Index", db.GetAllStudents());
+            else return View("Create", newStudent);
         }
 
         public IActionResult Details(int? id)
