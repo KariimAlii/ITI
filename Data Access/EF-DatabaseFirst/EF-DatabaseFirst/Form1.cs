@@ -170,7 +170,7 @@ namespace EF_DatabaseFirst
 //{
 //    str += (dept.Dept_Name + ',');
 //}
-//MessageBox.Show("Departments are: " + str); 
+//MessageBox.Show("Departments are: " + str);
 #endregion
 #region Employee
 //var query = from emp in context.Employees
@@ -182,7 +182,7 @@ namespace EF_DatabaseFirst
 //{
 //    str += (emp.Emp_Name + ',');
 //}
-//MessageBox.Show("Employees in Department 2 are: " + str); 
+//MessageBox.Show("Employees in Department 2 are: " + str);
 #endregion
 #region Employee 2
 //var query = from emp in context.Employees
@@ -194,10 +194,10 @@ namespace EF_DatabaseFirst
 //{
 //    str += $"Employee:{emp.EmployeeName} in Department:{emp.DepartmentName} \n";
 //}
-//MessageBox.Show("Employees in Department Systems and IT are: \n" + str); 
+//MessageBox.Show("Employees in Department Systems and IT are: \n" + str);
 #endregion
 #region Lazy Loading
-//var dept = context.Departments.First(); 
+//var dept = context.Departments.First();
 
 //foreach (var emp in dept.Employees)
 //{
@@ -214,7 +214,7 @@ namespace EF_DatabaseFirst
 //{
 //    str += (emp.Emp_Name + ",");
 //}
-//MessageBox.Show(str); 
+//MessageBox.Show(str);
 #endregion
 
 #region UPDATE & Changing EntityState property of Entry Object
@@ -237,21 +237,21 @@ namespace EF_DatabaseFirst
 
 //context.Departments.Attach(dept);
 
-//context.SaveChanges(); 
+//context.SaveChanges();
 #endregion
 
 
 #region As No Tracking
 //var query = (from dept in context.Departments
 //            where dept.Dept_id > 2
-//            select dept).AsNoTracking(); 
+//            select dept).AsNoTracking();
 #endregion
 
 
 #region Where vs Single vs Find
 //var dept = context.Departments.Find(2);
 //var dept = context.Departments.Single(d => d.Dept_id == 2);
-//var dept = context.Departments.Where(d => d.Dept_id == 2); 
+//var dept = context.Departments.Where(d => d.Dept_id == 2);
 #endregion
 
 #region Insert
@@ -294,7 +294,7 @@ namespace EF_DatabaseFirst
 //catch (SystemException er)
 //{
 //    MessageBox.Show(er.Message);
-//} 
+//}
 #endregion
 #region Delete
 //try

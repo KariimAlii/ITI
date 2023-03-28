@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc912e5954f7428d94534f142db91db2" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreAppModel.Buy" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Customer" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Product" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Product_MeasuringUnit" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.ReleasePermission" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Store" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Supplier" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.SupplyPermission" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreAppModel.Transfer_Permission" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <AssociationConnector Association="StoreAppModel.FK_Buy_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Buy_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Buy_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Product_MeasuringUnit_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_ReleasePermission_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_SupplyPermission_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Transfer_Permission_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_ReleasePermission_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_ReleasePermission_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_SupplyPermission_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Transfer_Permission_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Transfer_Permission_Store1" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_SupplyPermission_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.FK_Transfer_Permission_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreAppModel.Store_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
