@@ -1,0 +1,27 @@
+﻿@model Department
+@{
+    ViewBag.Title = $"Edit {@Model.Name} Department";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <form method="post">
+        <label asp-for="Name">Department Name:</label>
+        <input asp-for="Name" />
+        <br />
+        <label asp-for="ManagerName">Department Manager Name:</label>
+        <input asp-for="ManagerName" />
+        <br />
+        <input type="submit" value="update" class="btn btn-success" />
+    </form>
+</body>
+</html>
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}

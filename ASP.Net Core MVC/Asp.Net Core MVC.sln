@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2", "Lab2\Lab2.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3", "Lab3\Lab3.csproj", "{7EE9D58B-D217-435F-AF87-BF5D06E76EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5_CodeFirst_FromScratch", "Lab5_CodeFirst_FromScratch\Lab5_CodeFirst_FromScratch.csproj", "{6B2723A3-610D-4A94-B38D-158FD1DC0D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab5_CodeFirst_FromScratch", "Lab5_CodeFirst_FromScratch\Lab5_CodeFirst_FromScratch.csproj", "{6B2723A3-610D-4A94-B38D-158FD1DC0D7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59222362-5ECD-4DA7-9E93-EAE37ADA643B}"
+	ProjectSection(SolutionItems) = preProject
+		Lab3\Lab6.csproj = Lab3\Lab6.csproj
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

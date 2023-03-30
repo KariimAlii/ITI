@@ -1,0 +1,38 @@
+﻿@model Student
+@{
+    ViewBag.Title = $"Add a Student";
+}
+
+
+<form asp-action="create" asp-controller="student" method="post">
+    <label asp-for="Id">ID:</label>
+    <input asp-for="Id" />
+    <span asp-validation-for="Id"></span>
+    <br />
+    <label asp-for="Name">Name:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <br />
+    <label asp-for="Grade">Grade:</label>
+    <input asp-for="Grade" />
+    <span asp-validation-for="Grade"></span>
+    <br />
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <br />
+    <label asp-for="Password">Password:</label>
+    <input asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+    <br />
+    <label asp-for="cPassword">Password:</label>
+    <input asp-for="cPassword" />
+    <span asp-validation-for="cPassword"></span>
+    <br />
+    <input type="submit" value="Add"/>
+</form>
+
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}

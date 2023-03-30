@@ -1,3 +1,7 @@
+using Lab3.Models;
+using Lab3.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace Lab3
 {
     public class Program
@@ -8,7 +12,13 @@ namespace Lab3
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddTransient<IDepartment,DepartmentDB>();
+            builder.Services.AddTransient<IStudent,StudentDB>();
+            builder.Services.AddDbContext<ITIContext>(a =>
+            {
+                a.UseSqlServer(builder.Configuration.GetConnectionString("Connection1"));
+            }, ServiceLifetime.Scoped);
+            builder.Services.AddSession(a => { });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -21,7 +31,7 @@ namespace Lab3
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -34,3 +44,17 @@ namespace Lab3
         }
     }
 }
+//pattern: "{controller=Home}/{action=Index}/{id?}");
+//pattern: "{controller}/{action}/{id?}");
+//pattern: "{action=create}/{controller=student}/{id?}");
+//pattern: "iti/{action=create}/{controller=student}/{id?}");
+//pattern: "iti/{action=create}/{controller=student}");
+
+
+
+//builder.Services.AddDbContext<ITIContext>(a =>
+//{
+//    a.UseSqlServer("Server=(localdb)\\ProjectModels;Database=ITIDB;Trusted_Connection=true;");
+//    a.UseSqlServer(builder.Configuration.GetConnectionString("Connection1"));
+//    a.UseLazyLoadingProxies();
+//}, ServiceLifetime.Singleton);

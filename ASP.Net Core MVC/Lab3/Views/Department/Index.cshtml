@@ -23,6 +23,7 @@
                 <th scope="col">Details</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
+                <th scope="col">Update Courses</th>
             </tr>
         </thead>
         <tbody>
@@ -43,13 +44,16 @@
                         <td>@dept.Name</td>
                         <td>@dept.ManagerName</td>
                         <td>
-                            <a href="/Department/Details/@dept.Id" class="btn btn-primary">Details</a>
+                            <a asp-action="Details" asp-route-id="@dept.Id" class="btn btn-primary">Details</a>
                         </td>
                         <td>
-                            <a href="/Department/Edit/@dept.Id" class="btn btn-info">Edit</a>
+                            <a asp-action="Edit" asp-route-id="@dept.Id" class="btn btn-info">Edit</a>
                         </td>
                         <td>
-                            <a href="/Department/Delete/@dept.Id" class="btn btn-danger">Delete</a>
+                            <a asp-action="Delete" asp-route-id="@dept.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                        <td>
+                            <a asp-action="UpdateCourses" asp-route-id="@dept.Id" class="btn btn-warning">Update Courses</a>
                         </td>
                     </tr>
                     i++;

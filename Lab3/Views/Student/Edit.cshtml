@@ -1,0 +1,18 @@
+﻿@model Student
+@{
+    ViewBag.Title = $"Edit Student {Model.Name} Details";
+}
+
+<form method="post">
+    <label asp-for="Name">Name:</label>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Grade">Grade:</label>
+    <input asp-for="Grade" />
+    <br />
+    <input type="submit" value="Update" />
+</form>
+@section scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
+

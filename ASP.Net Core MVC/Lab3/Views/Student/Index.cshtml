@@ -10,6 +10,7 @@
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Grade</th>
+        <th scope="col">Department</th>
         <th scope="col">Details</th>
     </thead>
     @{
@@ -35,14 +36,21 @@
                     <td>@st.Id</td>
                     <td>@st.Name</td>
                     <td>@st.Grade</td>
+                    <td>@st.Department.Name</td>
                     <td>
-                        <a href="/Student/Details/@st.Id" class="btn btn-primary">Details</a>
+                        @*<a href="/Student/Details/@st.Id" class="btn btn-primary">Details</a>*@
+                        <a asp-controller="Student" asp-action="Details" asp-route-id="@st.Id" class="btn btn-primary">Details</a>
                     </td>
                     <td>
-                        <a href="/Student/Edit/@st.Id" class="btn btn-success">Edit</a>
+                        @*<a href="/Student/Edit/@st.Id" class="btn btn-success">Edit</a>*@
+                        <a asp-controller="Student" asp-action="Edit" asp-route-id="@st.Id" class="btn btn-success">Edit</a>
                     </td>
                     <td>
-                        <a href="/Student/Delete/@st.Id" class="btn btn-danger">Delete</a>
+                        @*<a href="/Student/Delete/@st.Id" class="btn btn-danger">Delete</a>*@
+                        <a asp-controller="Student" asp-action="Delete" asp-route-id="@st.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Student" asp-action="ShowStudentDetails" asp-route-id="@st.Id" asp-route-name="@st.Name" class="btn btn-warning">Show</a>
                     </td>
                 </tr>
 

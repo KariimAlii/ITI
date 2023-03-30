@@ -5,6 +5,7 @@
 
 
 <form asp-action="create" asp-controller="student" method="post">
+    <div asp-validation-summary="All"></div>
     <label asp-for="Id">ID:</label>
     <input asp-for="Id" />
     <span asp-validation-for="Id"></span>
@@ -28,6 +29,14 @@
     <label asp-for="cPassword">Password:</label>
     <input asp-for="cPassword" />
     <span asp-validation-for="cPassword"></span>
+    <br />
+    <label asp-for="DepartmentId">Department:</label>
+    <select name="DepartmentId">
+        @foreach (var item in ViewBag.Departments)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
     <br />
     <input type="submit" value="Add"/>
 </form>

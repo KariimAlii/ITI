@@ -7,6 +7,7 @@ namespace Lab3.Models
 {
     public class Student
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         [Required(ErrorMessage = "*")]
         [StringLength(10, MinimumLength = 3, ErrorMessage = "Name Length should be between 3 to 10 characters.")]
@@ -14,6 +15,8 @@ namespace Lab3.Models
         [Range(0, 50)]
         public int Grade { get; set; }
 
+        //[RegularExpression(@"^\\S+@\\S+\\.\\S+$")]
+        [Remote("CheckEmail", "Student", AdditionalFields = "Name,Grade")]
         [MyEmailValidator(ErrorMessage = "This email doesnt match our email constrains")]
         public string Email { get; set; }
 
@@ -25,35 +28,37 @@ namespace Lab3.Models
         [DataType(DataType.Password)]
         [NotMapped]
         public string cPassword { get; set; }
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
+        public virtual Department Department { get; set; }
+        public virtual ICollection<StudentCourse> StudentCourses { get; set; } = new HashSet<StudentCourse>();
     }
+
     class MyEmailValidator : ValidationAttribute
     {
-        public override bool IsValid(object value)
-        {
-            string emailAddress = value.ToString();
-            if (emailAddress.Contains('@')) return true;
-            else return false;
-        }
+       public override bool IsValid(object value)
+       {
+           string emailAddress = value.ToString();
+           try
+           {
+               MailAddress m = new MailAddress(emailAddress);
+               return true;
+           }
+           catch
+           {
+               return false;
+           }
+       }
+       // https://uibakery.io/regex-library/email-regex-csharp
     }
-    //class MyEmailValidator : ValidationAttribute
-    //{
-    //    public override bool IsValid(object value)
-    //    {
-    //        string emailAddress = value.ToString();
-    //        try
-    //        {
-    //            MailAddress m = new MailAddress(emailAddress);
-    //            return true;
-    //        }
-    //        catch
-    //        {
-    //            return false;
-    //        }
-    //    }
-    //    // https://uibakery.io/regex-library/email-regex-csharp
-    //}
 
-    //=======Email=======//
-    //[RegularExpression(@"^\\S+@\\S+\\.\\S+$")]
-    //[Remote("CheckEmail", "Student", AdditionalFields = "Name,Grade")]
+    // class MyEmailValidator : ValidationAttribute
+    // {
+    //     public override bool IsValid(object value)
+    //     {
+    //         string emailAddress = value.ToString();
+    //         if (emailAddress.Contains('@')) return true;
+    //         else return false;
+    //     }
+    // }
 }

@@ -8,7 +8,7 @@ namespace Lab5_CodeFirst_FromScratch.Models
         public int NewPrice { get; set; }
         public string PromotionalText { get; set; }
         [ForeignKey("Book")]
-        public int? BookId { get; set; }
+        public int BookId { get; set; }
         public virtual Book Book { get; set; }
 
     }
