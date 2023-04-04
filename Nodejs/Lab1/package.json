@@ -1,0 +1,19 @@
+{
+    "name": "lab1-nodejs",
+    "version": "1.0.0",
+    "description": "Lab1 - Nodejs Course - ITI",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app",
+        "monitor": "nodemon app"
+    },
+    "author": "Karim Ali",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "morgan": "^1.10.0"
+    }
+}
