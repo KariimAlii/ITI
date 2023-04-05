@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab3.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lab3.Controllers
 {
@@ -19,9 +20,10 @@ namespace Lab3.Controllers
         }
 
         // GET: Course
+        [Authorize(Roles = "Admin,Instructor")]
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Courses.ToListAsync());
+            return View(await _context.Courses.ToListAsync());
         }
 
         // GET: Course/Details/5
@@ -43,6 +45,7 @@ namespace Lab3.Controllers
         }
 
         // GET: Course/Create
+
         public IActionResult Create()
         {
             return View();

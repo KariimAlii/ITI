@@ -1,0 +1,8 @@
+- Upload image for student , show it in details
+- download any pdf  file
+- support login , register
+Add tables users   , roles , user roles
+- update layout to switch between login and logout
+- use authorize attribute
+.....
+Without using identity

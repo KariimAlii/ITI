@@ -1,0 +1,29 @@
+﻿@page
+@model RazorPageApp.Pages.Students.CreateModel
+@{
+}
+<form method="post">
+    <label asp-for="Student.Id">ID:</label>
+    <input asp-for="Student.Id" />
+    <span asp-validation-for="Student.Id"></span>
+    <br />
+    <br />
+
+    <label asp-for="Student.Name">Name:</label>
+    <input asp-for="Student.Name" />
+    <span asp-validation-for="Student.Name"></span>
+    <br />
+    <br />
+
+    <label asp-for="Student.Age">Age:</label>
+    <input asp-for="Student.Age" />
+    <span asp-validation-for="Student.Age"></span>
+    <br />
+    <br />
+
+    <input type="submit" value="Add" class="btn btn-success"/>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

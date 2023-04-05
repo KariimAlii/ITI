@@ -1,15 +1,16 @@
 ﻿using Lab3.Models;
 using Lab3.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab3.Controllers
 {
+    [Authorize]
     public class DepartmentController : Controller
     {
-        //DepartmentMoc db = new DepartmentMoc();
-        //DepartmentDB db = new DepartmentDB();
+        //DepartmentMoc db = new DepartmentMoc(); // DepartmentDB db = new DepartmentDB();
         IDepartment db;
         ITIContext context;
         public DepartmentController(IDepartment _db, ITIContext context)
@@ -17,16 +18,18 @@ namespace Lab3.Controllers
             db = _db;
             this.context = context;
         }
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(db.GetAllDepartments());
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Add(Department department)
         {

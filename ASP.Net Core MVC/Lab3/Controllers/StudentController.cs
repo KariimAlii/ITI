@@ -1,5 +1,6 @@
 ﻿using Lab3.Models;
 using Lab3.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lab3.Controllers
@@ -13,7 +14,7 @@ namespace Lab3.Controllers
         {
             this.db = db;
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             return View(db.GetAllStudents());

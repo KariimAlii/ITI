@@ -1,0 +1,14 @@
+﻿@page
+@model ContactModel
+<h1>
+    Hello from Razor Page Contact
+</h1>
+<h2>
+    Your ID : @Model.Id ,
+    Your Name : @Model.Name
+</h2>
+<form method="post">
+    <input type="text" name="id" />
+    <input type="text" name="name" />
+    <input type="submit" value="add" class="btn btn-success" />
+</form>

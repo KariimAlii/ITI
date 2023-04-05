@@ -1,5 +1,6 @@
 using Lab3.Models;
 using Lab3.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lab3
@@ -12,6 +13,12 @@ namespace Lab3
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(a =>
+                {
+                    a.LogoutPath = "/Account/Login";
+                });
+
             builder.Services.AddTransient<IDepartment,DepartmentDB>();
             builder.Services.AddTransient<IStudent,StudentDB>();
             builder.Services.AddDbContext<ITIContext>(a =>
@@ -34,6 +41,7 @@ namespace Lab3
             app.UseSession();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

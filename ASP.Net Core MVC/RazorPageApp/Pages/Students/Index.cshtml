@@ -1,0 +1,29 @@
+﻿@page
+@model RazorPageApp.Pages.Students.IndexModel
+@{
+}
+<a class="btn btn-success" asp-page="create">Create</a>
+<table class="table table-bordered">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th></th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Students)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>
+                    <a asp-route-id="@item.Id" asp-page="details" class="btn btn-info">Details</a>
+                    <a asp-route-id="@item.Id" asp-page="edit" class="btn btn-info">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
