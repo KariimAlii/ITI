@@ -34,8 +34,10 @@
     Export the class as default module export
     
     [Car Module File](./CarModule.js)
-    <a href="./CarModule.js">[Car Module File](https://img.shields.io/badge/Link-CarModule-brightgreen)<a>
-     <a href=".[Car Module File](https://img.shields.io/badge/Link-CarModule-brightgreen)">./CarModule.js<a>
+    <a href="./CarModule.js">
+    <img src="https://img.shields.io/badge/Link-CarModule-brightgreen"/>
+    </a>
+  
 - Create FlyCar.js that contains FlyingCar clas sthat inherits from car and has property canFly(TRUE)
 
     FlyigCar Class has CarData Function that call parent function and print “I can Fly”
