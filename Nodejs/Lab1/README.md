@@ -33,14 +33,14 @@
 
     Export the class as default module export
     
-    (Car Module File)[./CarModule.js]
+    [Car Module File](./CarModule.js)
 
 - Create FlyCar.js that contains FlyingCar clas sthat inherits from car and has property canFly(TRUE)
 
     FlyigCar Class has CarData Function that call parent function and print “I can Fly”
 
     Export it
-    (Fly Car Class File)[./FlyCar.js]
+    [Fly Car Class File](./FlyCar.js)
 
 - Create FlyinCar object and calling carData function inside base.js Module
 
