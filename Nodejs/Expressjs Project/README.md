@@ -19,17 +19,34 @@ Requirements :
 
 2- Create package.json file for your project npm init –y
 
+![image](https://user-images.githubusercontent.com/101140331/230521144-863f3903-b8c6-43f9-851e-e09744c45b8a.png)
+
+
 3- Create MVC folders models,controllers and routes
+
+![image](https://user-images.githubusercontent.com/101140331/230521160-a71cbddb-16b6-4f14-bb93-6b8f88a9286c.png)
+
 
 4- install express npm i express –save
 
+![image](https://user-images.githubusercontent.com/101140331/230521175-44e9e49a-da19-4a3d-913e-cc4109305959.png)
+
+
 5- install nodemon globally npm i nodemon –g
+
+![image](https://user-images.githubusercontent.com/101140331/230521199-93031794-4e01-4220-9d32-9ddb2d124999.png)
 
 6- create app.js file and create express server, then open the server on port
 number 8080
 
+![image](https://user-images.githubusercontent.com/101140331/230521213-3a9182e8-586d-48eb-ad56-0405098b8e9e.png)
+
 7- Add script to json file start:”nodemon app” , then run the server using this
 script.
+
+![image](https://user-images.githubusercontent.com/101140331/230521224-c2632858-fd9c-4f9b-a3a3-dc560acb0301.png)
+![image](https://user-images.githubusercontent.com/101140331/230521230-66181883-3344-4b54-acb8-51829be6e565.png)
+
 
 8- Create 3 middlewares on server
 
@@ -39,6 +56,10 @@ script.
 const morgan = require("morgan");
 app.use(morgan(":method :url :response-time"));
 ``
+
+![image](https://user-images.githubusercontent.com/101140331/230521260-4d91f0b3-23b4-4ea4-acb4-b82de722526e.png)
+
+
 - General middleware for not Found url pathes with 404 status code.
 
 - One Error handling middleware that will catch all system Errors with 500 status code.
