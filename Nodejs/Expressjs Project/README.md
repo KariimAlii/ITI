@@ -62,13 +62,21 @@ app.use(morgan(":method :url :response-time"));
 
 - General middleware for not Found url pathes with 404 status code.
 
-- One Error handling middleware that will catch all system Errors with 500 status code.
+    ``app.use((request,response,next) => {
+        response.status(404).json({message:"Not Found"})
+    }) ``
 
+- One Error handling middleware that will catch all system Errors with 500 status code.
+    ``app.use((error,request,response,next) => {
+    response.status(500).json({message:`Exception Occured: ${error}`})
+    })``
 
 Users: administrator(static) and teacher
 
 ## Now start create your routes
+
 - Teacher Data: _id(objectID), fullname,password, email , image (which is string)
+
 - Child Data: _id(Number), fullName, age , level (PreKG,KG1,KG2), address (city,street and building)
 
 - Class Data:_id(Number), name, supervisor (teacher id number), children which is array of children ids
@@ -81,6 +89,10 @@ Users: administrator(static) and teacher
 - /teahers delete, to delete specified teacher.
 - check your router using postman
 
+<a href="./Routes/TeacherRouter.js" target="_blank">
+<img src="https://img.shields.io/badge/Routes-Teacher%20Router-brightgreen"/>
+</a>
+
 2-Create childRouter that contains
 
 - /child - get, to get all children.
@@ -90,6 +102,9 @@ Users: administrator(static) and teacher
 - /child delete, to delete specified child.
 - check your router using postman
 
+<a href="./Routes/ChildRouter.js" target="_blank">
+<img src="https://img.shields.io/badge/Routes-Child%20Router-brightgreen"/>
+</a>
 
 3- Create classRouter that contains
 - /class - get, to get all classes.
@@ -100,3 +115,7 @@ Users: administrator(static) and teacher
 - /classchildern/id get , to get class children.
 - /classTeacher/id get, to get class supervisor
 - check your router using postman
+
+<a href="./Routes/ClassRouter.js" target="_blank">
+<img src="https://img.shields.io/badge/Routes-Class%20Router-brightgreen"/>
+</a>
