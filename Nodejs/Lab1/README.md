@@ -44,15 +44,13 @@
 
     Export it
 
-
+- Create FlyinCar object and calling carData function inside base.js Module
 
     <a href="./FlyCar.js" target="_blank">
     <img src="https://img.shields.io/badge/Link-Fly%20Car-brightgreen"/>
     </a>
 
-- Create FlyinCar object and calling carData function inside base.js Module
-
 - Finally: run base file using npm start
-- 
+
 ![image](https://user-images.githubusercontent.com/101140331/230519193-d47fbe8f-8341-46a6-b5ff-2069e1a2c5d0.png)
 
