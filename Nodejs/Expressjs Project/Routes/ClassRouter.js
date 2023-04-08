@@ -1,22 +1,33 @@
 const express = require("express");
 const router = express.Router();
+const controller = require("../Controllers/ClassController");
 
 router
     .route("/classes")
-    .get((request, response) => {
-        response.json({ message: "Get ~ All Classes" });
-    })
-    .post((request, response) => {
-        response.json({ message: "Post ~ Class" });
-    })
-    .patch((request, response) => {
-        response.json({ message: "Patch ~ Class" });
-    })
-    .put((request, response) => {
-        response.json({ message: "Put ~ Class" });
-    })
-    .delete((request, response) => {
-        response.json({ message: "Delete ~ Class" });
-    });
+    .get(
+        controller.dataValidation,
+        controller.authorization,
+        controller.getAllClasses
+    )
+    .post(
+        controller.dataValidation,
+        controller.authorization,
+        controller.addClass
+    )
+    .patch(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateClass
+    )
+    .put(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateClass
+    )
+    .delete(
+        controller.dataValidation,
+        controller.authorization,
+        controller.deleteClass
+    );
 
 module.exports = router;

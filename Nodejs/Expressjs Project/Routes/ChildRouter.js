@@ -1,21 +1,33 @@
 const express = require("express");
 const router = express.Router();
+const controller = require("../Controllers/ChildController");
 
-router.route("/childs")
-    .get((request,response) => {
-        response.json({message:"Get ~ All Childs"});
-    })
-    .post((request,response) => {
-        response.json({message:"Post ~ Child"});
-    })
-    .patch((request,response) => {
-        response.json({message:"Patch ~ Child"});
-    })
-    .put((request,response) => {
-        response.json({message:"Put ~ Child"});
-    })
-    .delete((request,response) => {
-        response.json({message:"Delete ~ Child"});
-    })
+router
+    .route("/childs")
+    .get(
+        controller.dataValidation,
+        controller.authorization,
+        controller.getAllChilds
+    )
+    .post(
+        controller.dataValidation,
+        controller.authorization,
+        controller.addChild
+    )
+    .patch(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateChild
+    )
+    .put(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateChild
+    )
+    .delete(
+        controller.dataValidation,
+        controller.authorization,
+        controller.deleteChild
+    );
 
 module.exports = router;

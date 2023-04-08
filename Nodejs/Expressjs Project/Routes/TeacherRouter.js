@@ -1,21 +1,32 @@
 const express = require("express");
 const router = express.Router();
+const controller = require("../Controllers/TeacherController");
+router
+    .route("/teachers")
+    .get(
+        controller.dataValidation,
+        controller.authorization,
+        controller.getAllTeachers
+    )
+    .post(
+        controller.dataValidation,
+        controller.authorization,
+        controller.addTeacher
+    )
+    .patch(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateTeacher
+    )
+    .put(
+        controller.dataValidation,
+        controller.authorization,
+        controller.updateTeacher
+    );
 
-router.route("/teachers")
-    .get((request,response) => {
-        response.json({message:"Get ~ All Teachers"});
-    })
-    .post((request,response) => {
-        response.json({message:"Post ~ Teacher"});
-    })
-    .patch((request,response) => {
-        response.json({message:"Patch ~ Teacher"});
-    })
-    .put((request,response) => {
-        response.json({message:"Put ~ Teacher"});
-    })
-    .delete((request,response) => {
-        response.json({message:"Delete ~ Teacher"});
-    })
+router
+    .route("/teachers/:id")
+    .get(controller.getTeacher)
+    .delete(controller.deleteTeacher);
 
 module.exports = router;
