@@ -24,6 +24,7 @@
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Update Courses</th>
+                <th scope="col">Show Courses</th>
             </tr>
         </thead>
         <tbody>
@@ -54,6 +55,9 @@
                         </td>
                         <td>
                             <a asp-action="UpdateCourses" asp-route-id="@dept.Id" class="btn btn-warning">Update Courses</a>
+                        </td>
+                        <td>
+                            <a asp-action="showCourses" asp-route-id="@dept.Id" class="btn btn-warning">Show Courses</a>
                         </td>
                     </tr>
                     i++;

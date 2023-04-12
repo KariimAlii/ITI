@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace Lab3.Controllers
 {
@@ -93,6 +94,7 @@ namespace Lab3.Controllers
             foreach (var item in coursesToRemove)
             {
                 var course = dept.Courses.FirstOrDefault(c => c.Crs_Id == item);
+                //var course = context.Courses.FirstOrDefault(c => c.Crs_Id == item);
                 if (course != null)
                 {
                     dept.Courses.Remove(course);
@@ -110,5 +112,63 @@ namespace Lab3.Controllers
             context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult ShowCourses(int id)
+        {
+            var department = context.Departments.Include(d => d.Courses).FirstOrDefault(d => d.Id == id);
+            return View(department);
+        }
+        public IActionResult UpdateStudentDegree(int id, int crsId)
+        {
+            //var students = context.Students.Select(s => s).Where(s => s.DepartmentId == id);
+            var students = context.Students.Where(s => s.DepartmentId == id).ToList();
+            var course = context.Courses.Find(crsId);
+            ViewBag.course = course;
+            return View(students);
+        }
+        [HttpPost]
+        public IActionResult UpdateStudentDegree(int id, int crsId, Dictionary<int,int> stdDegree)
+        {
+            foreach (var item in stdDegree)
+            {
+                var record = context.StudentCourses.FirstOrDefault(s => s.Course_Id == crsId && s.Student_Id == item.Key);
+                if (record == null)
+                {
+                    StudentCourse stdCrs = new StudentCourse()
+                    {
+                        Course_Id = crsId,
+                        Student_Id = item.Key,
+                        Grade = item.Value,
+                    };
+                    context.StudentCourses.Add(stdCrs);
+                }
+                else
+                {
+                    record.Grade = item.Value;
+                }
+            }
+            context.SaveChanges();
+            //return RedirectToAction(nameof(UpdateStudentDegree), new { id = id, crsId = crsId });
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
+
+
+
+//[HttpPost]
+//public IActionResult UpdateStudentDegree(int crsId, int stdId, int grade)
+//{
+//    var student = context.Students.Find(stdId);
+//    var course = context.Courses.Find(crsId);
+//    StudentCourse stdCrs = new StudentCourse()
+//    {
+//        Course_Id = crsId,
+//        Student_Id = stdId,
+//        Grade = grade,
+//        Student = student,
+//        Course = course
+//    };
+//    context.StudentCourses.Add(stdCrs);
+//    context.SaveChanges();
+//    return RedirectToAction(nameof(Index));
+//}

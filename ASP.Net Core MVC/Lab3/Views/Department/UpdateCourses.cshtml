@@ -5,7 +5,7 @@
 
 <h1>UpdateCourses</h1>
 <form method="post">
-    <input name="id" value="@ViewBag.deptId" type="hidden"/>
+    <input name="id" value="@ViewBag.deptId" type="hidden"/> @*already in url*@
     <div>
         <h2 class="alert alert-info">Courses in Department</h2>
         <select name="coursesToRemove" asp-items="ViewBag.coursesInDept" multiple></select>

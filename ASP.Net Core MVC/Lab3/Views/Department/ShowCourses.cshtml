@@ -1,0 +1,43 @@
+﻿@model Department
+@{
+    ViewBag.Title = $"Department {Model.Name} Courses";
+}
+
+<h2 class="my-3">Courses in Department @Model.Name</h2>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Course Id</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Course Duration</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model.Courses)
+        {
+            <tr>
+                <td>
+                    @course.Crs_Id
+                </td>
+                <td>
+                    @course.Crs_Name
+                </td>
+                <td>
+                    @(course.LectureHours + course.LabHours)
+                </td>
+                <td>
+                    <a
+                        asp-action="UpdateStudentDegree"
+                        asp-route-id="@Model.Id"
+                        asp-route-crsId="@course.Crs_Id"
+                        class="btn btn-success"
+                    > Update Students Degrees </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

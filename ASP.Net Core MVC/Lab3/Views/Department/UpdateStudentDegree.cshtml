@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Lab3.Models.Student>
+
+@{
+    ViewData["Title"] = "UpdateStudentDegree";
+}
+
+<h1>Update Students Degree in @ViewBag.course.Crs_Name Course </h1>
+
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    Grade
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <input type="number" name="stdDegree.@item.Id">
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+    <input type="submit" value="Add" class="btn btn-success">
+</form>
+
+
+
+
+@*@foreach (var item in Model)
+{
+    <form method="post">
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <input type="number" name="stdId" value="@item.Id" hidden>
+                <input type="number" name="grade">
+            </td>
+            <td>
+                <input type="submit" value="Add" class="btn btn-success">
+            </td>
+        </tr>
+    </form>
+}*@
