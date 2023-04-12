@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const Teacher = require("../Models/TeacherSchema");
 
+
 module.exports.dataValidation = (request, response, next) => {
     console.log("Data Validation");
     next();
@@ -20,8 +21,6 @@ module.exports.getAllTeachers = async (request, response, next) => {
 };
 module.exports.addTeacher = async (request, response, next) => {
     try {
-        // console.log("request.params: ", request.params);
-        // console.log("request.query: ", request.query);
         console.log("request.body: ", request.body);
 
         const { fullName, email, password, image } = request.body;
@@ -36,6 +35,8 @@ module.exports.addTeacher = async (request, response, next) => {
             image,
         });
         const data = await newTeacher.save();
+
+        
         response.status(201).json({ newTeacher: data });
     } catch (error) {
         next(error);
@@ -44,6 +45,7 @@ module.exports.addTeacher = async (request, response, next) => {
 module.exports.updateTeacher = async (request, response, next) => {
     try {
         let { _id, fullName, email } = request.body;
+        if (_id !== request.decodedToken.id) throw new Error("Not Authorized")
         _id = new mongoose.Types.ObjectId(_id);
         const data = await Teacher.updateOne(
             { _id },

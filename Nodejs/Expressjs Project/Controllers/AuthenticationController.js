@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
+require("dotenv").config();
 const Teacher = require("../Models/TeacherSchema");
 
 module.exports.login = async function (request,response,next) {
@@ -18,7 +18,7 @@ module.exports.login = async function (request,response,next) {
                 id:user._id,
                 role:"admin",
                 userName:user.fullName
-            },"Tamatem",{expiresIn:"1h"})
+            },process.env.Token_Encryption_Key,{expiresIn:"1h"})
             response.status(200).json({token})
         } 
         else {
@@ -26,7 +26,7 @@ module.exports.login = async function (request,response,next) {
                 id:user._id,
                 role:"teacher",
                 userName:user.fullName
-            },"Tamatem",{expiresIn:"1h"})
+            },process.env.Token_Encryption_Key,{expiresIn:"1h"})
             response.status(200).json({token})
         }
     }

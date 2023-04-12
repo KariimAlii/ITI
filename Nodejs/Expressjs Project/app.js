@@ -4,7 +4,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 //! Importing Routes
 
 const TeacherRouter = require("./Routes/TeacherRouter");
@@ -16,15 +16,15 @@ const LoginRouter = require("./Routes/AuthenticationRouter");
 const authMW = require("./Middlewares/authMW")
 
 const app = express();
-const authorized = true;
+
 
 //! 1 - Logging Middleware
 app.use(morgan(":method :url :response-time"));
 
 //! 2 - Authorization Middleware
+const authorized = true;
 app.use((request, response, next) => {
     if (authorized) next();
-    // else throw new Error("Not Authorized");
     else next(new Error("Not Authorized"));
 });
 
@@ -33,7 +33,14 @@ app.use(express.json());
 // app.use(require("body-parser").json());
 
 //! 4- Routes
+
+//* =======================Login Route======================= *//
 app.use(LoginRouter);
+
+//* ================Authentication Middleware================ *//
+app.use(authMW);
+
+//* =======================Model Routes======================= *//
 app.use(TeacherRouter);
 app.use(ChildRouter);
 app.use(ClassRouter);
@@ -68,3 +75,5 @@ mongoose
 // } catch (error) {
 //     console.log(`DB ERROR: ${error}`);
 // }
+console.log(process.env.Token_Encryption_Key)
+console.log(process.env.Users_Password)

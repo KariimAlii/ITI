@@ -1,4 +1,5 @@
 const Child = require("../Models/ChildSchema");
+const findSequence = require("../Utils/Sequence");
 
 module.exports.dataValidation = (request, response, next) => {
     console.log("Data Validation");
@@ -18,16 +19,20 @@ module.exports.getAllChilds = async (request, response, next) => {
 };
 module.exports.addChild = async (request, response,next) => {
     try {
-        const {_id,fullName,age,level,address} = request.body;
+        const {fullName,age,level,address} = request.body;
+        let sequenceValue = await findSequence("Child Counter");
         const newChild = new Child({
-            _id,fullName,age,level,address
+            _id:sequenceValue,
+            fullName,
+            age,
+            level,
+            address
         })
         const data = await newChild.save();
-        response.status(200).json({ data });
+        response.status(201).json({ data });
     } catch (error) {
         next(error);
     }
-    response.status(201).json({ message: "Post ~ Child" });
 };
 module.exports.updateChild = (request, response) => {
     response.status(201).json({ message: "Update ~ Child" });

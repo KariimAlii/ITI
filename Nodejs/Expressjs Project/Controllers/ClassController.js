@@ -1,6 +1,7 @@
 const Class = require("../Models/ClassSchema");
 const Teacher = require("../Models/TeacherSchema");
 const Child = require("../Models/ChildSchema");
+const findSequence = require("../Utils/Sequence");
 
 module.exports.dataValidation = (request, response, next) => {
     console.log("Data Validation");
@@ -23,7 +24,7 @@ module.exports.getAllClasses = async (request, response,next) => {
 };
 module.exports.addClass = async (request, response,next) => {
     try {
-        const {_id,name,supervisorFullName,childrenIds} = request.body;
+        const {name,supervisorFullName,childrenIds} = request.body;
         const supervisor = await Teacher.findOne({fullName:supervisorFullName});
         console.log('supervisor: ', supervisor);
         let childrenObjects = [];
@@ -32,8 +33,9 @@ module.exports.addClass = async (request, response,next) => {
             childrenObjects.push(childObject);
         }
         console.log('childrenObjects:',childrenObjects)
+        let sequenceValue = await findSequence("Class Counter");
         const newClass = new Class({
-            _id,
+            _id:sequenceValue,
             name,
             supervisor,
             childrenIds : childrenObjects

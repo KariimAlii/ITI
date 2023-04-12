@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../Controllers/TeacherController");
+const {checkAdmin , checkTeacher} = require("../Middlewares/authMW")
 router
     .route("/teachers")
+    .all(checkAdmin)
     .get(
         controller.dataValidation,
         controller.authorization,
@@ -26,6 +28,7 @@ router
 
 router
     .route("/teachers/:id")
+    .all(checkTeacher)
     .get(controller.getTeacher)
     .delete(controller.deleteTeacher);
 
