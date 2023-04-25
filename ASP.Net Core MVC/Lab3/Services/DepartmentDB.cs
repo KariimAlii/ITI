@@ -45,10 +45,7 @@ namespace Lab3.Services
                 context.SaveChanges();
             }
         }
-        public void UpdateDepartmentCourses(int id)
-        {
-            
-        }
+
     }
 
 }

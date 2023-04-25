@@ -4,7 +4,9 @@ namespace Lab3.Models
 {
     public class ITIContext : DbContext
     {
+        // Dependency Injection Constructor
         public ITIContext (DbContextOptions options) : base(options) { }
+        // Default Constructor
         public ITIContext() { }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
