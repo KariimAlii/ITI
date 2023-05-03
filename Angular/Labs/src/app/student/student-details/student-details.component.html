@@ -1,1 +1,21 @@
-<p>student-details works!</p>
+<form (click)="updateStudent(t1.value,t2.value,t3.value,t4.value)" action="#">
+  <div class="mb-3">
+    <label for="studentId" class="form-label">Student Id:</label>
+    <input #t1 [value]="std.id" type="number" class="form-control" id="studentId">
+  </div>
+  <div class="mb-3">
+    <label for="studentName" class="form-label">Student Name:</label>
+    <input #t2 [value]="std.name" type="text" class="form-control" id="studentName">
+  </div>
+  <div class="mb-3">
+    <label for="studentAge" class="form-label">Student Age:</label>
+    <input #t3 [value]="std.age" type="number" class="form-control" id="studentAge">
+  </div>
+  <div class="mb-3">
+    <label for="studentDeptNo" class="form-label">Student DeptNo:</label>
+    <input #t4 [value]="std.deptNo" type="text" class="form-control" id="studentDeptNo">
+  </div>
+  <button  type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h2>Student {{std.name}} has id : {{std.id}} , age : {{std.age}} , deptNo : {{std.deptNo}}</h2>

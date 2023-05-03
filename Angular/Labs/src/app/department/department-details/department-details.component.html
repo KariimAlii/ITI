@@ -1,1 +1,14 @@
-<p>department-details works!</p>
+<div class="mb-3">
+  <label for="departmentId" class="form-label">Department Id:</label>
+  <input #t1 [value]="dept.id" type="number" class="form-control" id="departmentId" (keyup)="dept.id = t1.value">
+</div>
+<div class="mb-3">
+  <label for="departmentName" class="form-label">department Name:</label>
+  <input #t2 [value]="dept.deptName" type="text" class="form-control" id="departmentName" (keyup)="dept.deptName = t2.value">
+</div>
+<div class="mb-3">
+  <label for="departmentLocation" class="form-label">department Location:</label>
+  <input #t3 [value]="dept.location" type="text" class="form-control" id="departmentLocation" (keyup)="updateDepartment(t1.value,t2.value,t3.value)">
+</div>
+
+<h2>Department {{dept.deptName}} has id : {{dept.id}} , location : {{dept.location}} </h2>

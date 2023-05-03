@@ -10,6 +10,9 @@ import { DepartmentDetailsComponent } from './department-details/department-deta
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    DepartmentDetailsComponent
   ]
 })
 export class DepartmentModule { }
