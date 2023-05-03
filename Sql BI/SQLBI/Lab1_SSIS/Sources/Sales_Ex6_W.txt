@@ -1,0 +1,30 @@
+ParentID,value
+1,value 1
+2,value 1
+3,value 1
+Prod_ID,SalesName,Qty
+1,ahmed,1000
+2,ali,2000
+3,eman,3000
+4,noha,4000
+5,mahmoud,5000
+1,ahmed,10
+2,ali,20
+3,eman,30
+4,noha,40
+5,mahmoud,50
+1,ahmed,60
+2,ali,70
+3,eman,80
+4,noha,90
+5,mahmoud,100
+1,ahmed,100
+2,ali,200
+3,eman,300
+4,noha,400
+5,mahmoud,500
+1,ahmed,600
+2,ali,700
+3,eman,800
+4,noha,900
+5,mahmoud,1000

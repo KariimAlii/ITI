@@ -1,0 +1,4 @@
+4,Ali,Ahmed ,Mohamed,,23,Alex,800,400
+5,Eman,Ayman,,,20,Alex,4000,1
+8,Ehab,Magdi,Mohamed,,22,Cairo,7000,200
+10,Samia,Elsayed,Mohamed,,18,Cairo,3500,120

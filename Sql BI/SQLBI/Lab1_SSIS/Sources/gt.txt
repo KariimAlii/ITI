@@ -1,0 +1,5 @@
+1,Mohamed,Ibrahim,Elsayed,1990-02-02,33,Alex,5000,1000
+2,Ahmed,Ali,Ali,1989-03-03,34,Alex,,200
+6,Malak,Mohamed,Ibraim,1980-10-10,43,Cairo,6000,300
+7,Mazen,,Elsayed,,50,Cairo,8000,300
+9,Faten,Hassan,Attia,1958-01-01,65,Cairo,9000,100
