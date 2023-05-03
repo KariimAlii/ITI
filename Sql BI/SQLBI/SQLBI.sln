@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Lab1_SSIS", "Lab1_SSIS\Lab1_SSIS.dtproj", "{3EA621B9-CACF-42AD-8C84-B30C21C0177C}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Lab2_SASS", "Lab2_SASS\Lab2_SASS.dwproj", "{58116282-2C03-4CD4-AE47-13EE702D6B3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -12,6 +14,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3EA621B9-CACF-42AD-8C84-B30C21C0177C}.Development|Default.ActiveCfg = Development
 		{3EA621B9-CACF-42AD-8C84-B30C21C0177C}.Development|Default.Build.0 = Development
+		{58116282-2C03-4CD4-AE47-13EE702D6B3D}.Development|Default.ActiveCfg = Development
+		{58116282-2C03-4CD4-AE47-13EE702D6B3D}.Development|Default.Build.0 = Development
+		{58116282-2C03-4CD4-AE47-13EE702D6B3D}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
