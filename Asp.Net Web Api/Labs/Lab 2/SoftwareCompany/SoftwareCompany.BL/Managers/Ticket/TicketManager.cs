@@ -21,9 +21,10 @@ namespace SoftwareCompany.BL
         #region Methods
 
 
-        public IEnumerable<TicketReadDto> GetAll()
+        public async Task<IEnumerable<TicketReadDto>> GetAll()
         {
-            var TicketsFromDB = ticketRepo.GetAll();
+
+            var TicketsFromDB = await ticketRepo.GetAll();
             return TicketsFromDB.Select(d => new TicketReadDto
             {
                 Id = d.Id,
@@ -32,9 +33,9 @@ namespace SoftwareCompany.BL
                 DepartmentId = d.DepartmentId
             }).ToList();
         }
-        public TicketReadDto? GetById(int id)
+        public async Task<TicketReadDto?> GetById(int id)
         {
-            var TicketFromDB = ticketRepo.GetById(id);
+            var TicketFromDB = await ticketRepo.GetById(id);
             if (TicketFromDB == null)
                 return null;
             return new TicketReadDto
@@ -45,7 +46,7 @@ namespace SoftwareCompany.BL
                 DepartmentId = TicketFromDB.DepartmentId
             };
         }
-        public int Add(TicketAddDto ticketDto)
+        public async Task<int> Add(TicketAddDto ticketDto)
         {
             var newTicket = new Ticket
             {
@@ -53,31 +54,31 @@ namespace SoftwareCompany.BL
                 Title = ticketDto.Title,
                 DepartmentId = ticketDto.DepartmentId
             };
-            ticketRepo.Add(newTicket);
+            await ticketRepo.Add(newTicket);
             // newTicket.Id = default
-            ticketRepo.SaveChanges(); //====> returns the object added with its {Id} set by database provider
+            await ticketRepo.SaveChanges(); //====> returns the object added with its {Id} set by database provider
             // newTicket.Id = 157
             return newTicket.Id;
         }
-        public bool Update(TicketUpdateDto ticketDto)
+        public async Task<bool> Update(TicketUpdateDto ticketDto)
         {
-            var TicketFromDB = ticketRepo.GetById(ticketDto.Id);
+            var TicketFromDB = await ticketRepo.GetById(ticketDto.Id);
             if (TicketFromDB == null)
                 return false;
             TicketFromDB.Description = ticketDto.Description;
             TicketFromDB.Title = ticketDto.Title;
             TicketFromDB.DepartmentId = ticketDto.DepartmentId;
             ticketRepo.Update(TicketFromDB);
-            ticketRepo.SaveChanges();
+            await ticketRepo.SaveChanges();
             return true;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var TicketFromDB = ticketRepo.GetById(id);
+            var TicketFromDB = await ticketRepo.GetById(id);
             if (TicketFromDB == null)
                 return;
             ticketRepo.Delete(TicketFromDB);
-            ticketRepo.SaveChanges();
+            await ticketRepo.SaveChanges();
         }
 
         #endregion

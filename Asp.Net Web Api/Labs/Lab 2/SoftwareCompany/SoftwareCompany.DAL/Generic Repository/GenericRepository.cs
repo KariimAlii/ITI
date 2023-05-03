@@ -19,20 +19,20 @@ namespace SoftwareCompany.DAL
         #endregion
 
         #region Methods
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAll()
         {
-            return context.Set<TEntity>().AsNoTracking(); // ReadOnly
+            return await context.Set<TEntity>().AsNoTracking().ToListAsync(); // ReadOnly
         }
 
-        public TEntity? GetById(int id)
+        public async Task<TEntity?> GetById(int id)
         {
-            return context.Set<TEntity>().Find(id); // You cannot use .AsNoTracking()
+            return await context.Set<TEntity>().FindAsync(id); // You cannot use .AsNoTracking()
             //return context.Set<TEntity>().FirstOrDefault(id).AsNoTracking(); // You can use .AsNoTracking()
         }
 
-        public void Add(TEntity entity)
+        public async Task Add(TEntity entity)
         {
-            context.Set<TEntity>().Add(entity);
+            await context.Set<TEntity>().AddAsync(entity);
         }
 
         public void Update(TEntity entity)
@@ -43,9 +43,9 @@ namespace SoftwareCompany.DAL
         {
             context.Set<TEntity>().Remove(entity);
         }
-        public int SaveChanges()
+        public async Task<int> SaveChanges()
         {
-            return context.SaveChanges();
+            return await context.SaveChangesAsync();
         }
         #endregion
     }

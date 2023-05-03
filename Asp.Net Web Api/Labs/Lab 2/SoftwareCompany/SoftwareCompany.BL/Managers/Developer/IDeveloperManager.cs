@@ -8,10 +8,10 @@ namespace SoftwareCompany.BL
 {
     public interface IDeveloperManager
     {
-        IEnumerable<DeveloperReadDto> GetAll();
-        DeveloperReadDto? GetById(int id);
-        int Add(DeveloperAddDto developerDto);
-        bool Update(DeveloperUpdateDto developerDto);
-        void Delete(int id);
+        Task<IEnumerable<DeveloperReadDto>> GetAll();
+        Task<DeveloperReadDto?> GetById(int id);
+        Task<int> Add(DeveloperAddDto developerDto);
+        Task<bool> Update(DeveloperUpdateDto developerDto);
+        Task Delete(int id);
     }
 }

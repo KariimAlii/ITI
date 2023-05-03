@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using SoftwareCompany.APIs;
 using SoftwareCompany.BL;
 using SoftwareCompany.DAL;
 
@@ -22,26 +23,29 @@ namespace SoftwareCompany
 
             #region Context
 
-            builder.Services.AddDbContext<SoftwareCompanyContext>(options =>
-            {
-                string? LocalConnectionString = builder.Configuration.GetConnectionString("LocalConnectionString");
-                options.UseSqlServer(LocalConnectionString);
-            });
+            //builder.Services.AddDbContext<SoftwareCompanyContext>(options =>
+            //{
+            //    string? LocalConnectionString = builder.Configuration.GetConnectionString("LocalConnectionString");
+            //    options.UseSqlServer(LocalConnectionString);
+            //});
+            builder.Services.AddApplicationServices(builder.Configuration);
+
             #endregion
 
             #region Repos
 
-            builder.Services.AddScoped< IGenericRepository<Department> , GenericRepository<Department> >();
-            builder.Services.AddScoped< IGenericRepository<Developer> , GenericRepository<Developer> >();
-            builder.Services.AddScoped< IGenericRepository<Ticket> , GenericRepository<Ticket> >();
-
+            //builder.Services.AddScoped< IDepartmentRepo , DepartmentRepo >();
+            //builder.Services.AddScoped< IGenericRepository<Developer> , GenericRepository<Developer> >();
+            //builder.Services.AddScoped< IGenericRepository<Ticket> , GenericRepository<Ticket> >();
+            builder.Services.AddRepoServices();
             #endregion
 
             #region Managers
 
-            builder.Services.AddScoped<IDepartmentManager,DepartmentManager>();
-            builder.Services.AddScoped<IDeveloperManager,DeveloperManager>();
-            builder.Services.AddScoped<ITicketManager,TicketManager>();
+            //builder.Services.AddScoped<IDepartmentManager,DepartmentManager>();
+            //builder.Services.AddScoped<IDeveloperManager,DeveloperManager>();
+            //builder.Services.AddScoped<ITicketManager,TicketManager>();
+            builder.Services.AddManagerServices();
 
             #endregion
             var app = builder.Build();

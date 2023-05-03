@@ -8,10 +8,11 @@ namespace SoftwareCompany.BL
 {
     public interface IDepartmentManager
     {
-        IEnumerable<DepartmentReadDto> GetAll();
-        DepartmentReadDto? GetById(int id);
-        int Add(DepartmentAddDto departmentDto);
-        bool Update(DepartmentUpdateDto departmentDto);
-        void Delete(int id);
+        Task<IEnumerable<DepartmentReadDto>> GetAll();
+        Task<DepartmentReadDto?> GetById(int id);
+        Task<DepartmentReadDetailsDto?> GetDetails(int id);
+        Task<int> Add(DepartmentAddDto departmentDto);
+        Task<bool> Update(DepartmentUpdateDto departmentDto);
+        Task Delete(int id);
     }
 }

@@ -8,10 +8,10 @@ namespace SoftwareCompany.BL
 {
     public interface ITicketManager
     {
-        IEnumerable<TicketReadDto> GetAll();
-        TicketReadDto? GetById(int id);
-        int Add(TicketAddDto entity);
-        bool Update(TicketUpdateDto entity);
-        void Delete(int id);
+        Task<IEnumerable<TicketReadDto>> GetAll();
+        Task<TicketReadDto?> GetById(int id);
+        Task<int> Add(TicketAddDto entity);
+        Task<bool> Update(TicketUpdateDto entity);
+        Task Delete(int id);
     }
 }

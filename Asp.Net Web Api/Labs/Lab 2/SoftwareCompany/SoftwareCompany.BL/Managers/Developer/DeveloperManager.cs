@@ -21,9 +21,9 @@ namespace SoftwareCompany.BL
         #region Methods
 
 
-        public IEnumerable<DeveloperReadDto> GetAll()
+        public async Task<IEnumerable<DeveloperReadDto>> GetAll()
         {
-            var DevelopersFromDB = developerRepo.GetAll();
+            var DevelopersFromDB = await developerRepo.GetAll();
             return DevelopersFromDB.Select(d => new DeveloperReadDto
             {
                 Id = d.Id,
@@ -31,9 +31,9 @@ namespace SoftwareCompany.BL
                 Salary = d.Salary
             }).ToList();
         }
-        public DeveloperReadDto? GetById(int id)
+        public async Task<DeveloperReadDto?> GetById(int id)
         {
-            var DeveloperFromDB = developerRepo.GetById(id);
+            var DeveloperFromDB = await developerRepo.GetById(id);
             if (DeveloperFromDB == null)
                 return null;
             return new DeveloperReadDto
@@ -43,35 +43,35 @@ namespace SoftwareCompany.BL
                 Salary = DeveloperFromDB.Salary
             };
         }
-        public int Add(DeveloperAddDto developerDto)
+        public async Task<int> Add(DeveloperAddDto developerDto)
         {
             var newDeveloper = new Developer
             {
                 Name = developerDto.Name
             };
-            developerRepo.Add(newDeveloper);
+            await developerRepo.Add(newDeveloper);
             // newDeveloper.Id = default
-            developerRepo.SaveChanges(); //====> returns the object added with its {Id} set by database provider
+            await developerRepo.SaveChanges(); //====> returns the object added with its {Id} set by database provider
             // newDeveloper.Id = 157
             return newDeveloper.Id;
         }
-        public bool Update(DeveloperUpdateDto developerDto)
+        public async Task<bool> Update(DeveloperUpdateDto developerDto)
         {
-            var DeveloperFromDB = developerRepo.GetById(developerDto.Id);
+            var DeveloperFromDB = await developerRepo.GetById(developerDto.Id);
             if (DeveloperFromDB == null)
                 return false;
             DeveloperFromDB.Name = developerDto.Name;
             developerRepo.Update(DeveloperFromDB);
-            developerRepo.SaveChanges();
+            await developerRepo.SaveChanges();
             return true;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            var DeveloperFromDB = developerRepo.GetById(id);
+            var DeveloperFromDB = await developerRepo.GetById(id);
             if (DeveloperFromDB == null)
                 return;
             developerRepo.Delete(DeveloperFromDB);
-            developerRepo.SaveChanges();
+            await developerRepo.SaveChanges();
         }
 
         #endregion
