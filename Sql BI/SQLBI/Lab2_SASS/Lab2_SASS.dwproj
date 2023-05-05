@@ -17,6 +17,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>FullCube.cube</Name>
+      <FullPath>FullCube.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>FullCube.partitions</Name>
+          <FullPath>FullCube.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
@@ -26,6 +36,26 @@
     <ProjectItem>
       <Name>Time Dim.dim</Name>
       <FullPath>Time Dim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Product Dim 1.dim</Name>
+      <FullPath>Product Dim 1.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Customer Dim.dim</Name>
+      <FullPath>Customer Dim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales Man Dim.dim</Name>
+      <FullPath>Sales Man Dim.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Time Dim 1.dim</Name>
+      <FullPath>Time Dim 1.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Branch Dim.dim</Name>
+      <FullPath>Branch Dim.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
@@ -38,6 +68,10 @@
     <ProjectItem>
       <Name>Sales WH.dsv</Name>
       <FullPath>Sales WH.dsv</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sales WH 1.dsv</Name>
+      <FullPath>Sales WH 1.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
   <Configurations>
