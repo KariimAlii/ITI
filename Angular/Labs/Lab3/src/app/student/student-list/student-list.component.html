@@ -1,0 +1,50 @@
+<app-student-add (onStudentAdd)="AddStudent($event)"></app-student-add>
+
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Department No</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students; let i = index;let f = first ; let l = last" [ngClass]="{'lastElement':l}">
+        <td scope="row">{{i}}</td>
+        <td scope="row">{{f}}</td>
+        <td scope="row">{{l}}</td>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.deptNo}}</td>
+        <td>
+          <button (click)="showDetails(student.id)">Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-student-details [studentDetails]="_studentDetails" *ngIf="_detailsFlag" (onHideDetails)="hideDetails($event)"></app-student-details>
+
+<app-student-update></app-student-update>
+
+<app-student-delete></app-student-delete>
+
+
+<!-- <input [(ngModel)]="degree">
+
+<h2  *ngIf="degree >= 60; else t1">
+  {{degree}} success
+</h2>
+<ng-template #t1>
+  <h2>
+    {{degree}} fail
+  </h2>
+</ng-template> -->

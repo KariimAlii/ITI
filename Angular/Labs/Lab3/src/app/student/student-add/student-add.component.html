@@ -1,0 +1,13 @@
+<button *ngIf="addFlag ; else t2" (click)="hideAdd()">Hide Add</button>
+<ng-template #t2>
+  <button (click)="showAdd()">Show Add</button>
+</ng-template>
+
+<div *ngIf="addFlag">
+  <h1 class="alert">Adding Student</h1>
+  id: <input [(ngModel)]="newStudent.id"> <br>
+  name: <input [(ngModel)]="newStudent.name"> <br>
+  age: <input [(ngModel)]="newStudent.age"> <br>
+  Department Num: <input [(ngModel)]="newStudent.deptNo"> <br>
+  <button (click)="Save()" class="btn btn-success">Add</button>
+</div>

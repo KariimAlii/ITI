@@ -1,0 +1,21 @@
+<div class="mb-3">
+  <label for="departmentId" class="form-label">Department Id:</label>
+  <!-- <input #t1 [value]="dept.id" type="number" class="form-control" id="departmentId" (change)="dept.id = t1.value"> -->
+  <input [(ngModel)]="dept.id" type="number" class="form-control" id="departmentId" >
+</div>
+<div class="mb-3">
+  <label for="departmentName" class="form-label">department Name:</label>
+  <!-- <input #t2 [value]="dept.deptName" type="text" class="form-control" id="departmentName" (change)="dept.deptName = t2.value"> -->
+  <input  [(ngModel)]="dept.deptName" type="text" class="form-control" id="departmentName" >
+</div>
+<div class="mb-3">
+  <label for="departmentLocation" class="form-label">department Location:</label>
+  <!-- <input #t3 [value]="dept.location" type="text" class="form-control" id="departmentLocation" (change)="updateDepartment(t1.value,t2.value,t3.value)"> -->
+  <input [(ngModel)]="dept.location" type="text" class="form-control" id="departmentLocation">
+</div>
+<div class="mb-3">
+  <label for="departmentLocation" class="form-label">department Description:</label>
+  <!-- <input  [value]="description" type="text" class="form-control" id="departmentLocation" (change)="description = $event.target.value"> -->
+  <input  [(ngModel)]="description" type="text" class="form-control" id="departmentLocation">
+</div>
+<h2>Department {{dept.deptName}} has id : {{dept.id}} , location : {{dept.location}} , Description : {{description}}</h2>
