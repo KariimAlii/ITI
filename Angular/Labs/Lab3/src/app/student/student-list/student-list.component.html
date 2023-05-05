@@ -12,6 +12,8 @@
         <th scope="col">Age</th>
         <th scope="col">Department No</th>
         <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +26,13 @@
         <td>{{student.age}}</td>
         <td>{{student.deptNo}}</td>
         <td>
-          <button (click)="showDetails(student.id)">Details</button>
+          <button class="btn btn-success" (click)="showDetails(student.id)">Details</button>
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="showUpdateStudent(student.id)">Edit</button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="showDeleteStudent(student.id)">Delete</button>
         </td>
       </tr>
     </tbody>
@@ -33,9 +41,9 @@
 
 <app-student-details [studentDetails]="_studentDetails" *ngIf="_detailsFlag" (onHideDetails)="hideDetails($event)"></app-student-details>
 
-<app-student-update></app-student-update>
+<app-student-update [studentDetails]="_exportStudentUpdate" *ngIf="_updateFlag" (onStudentUpdate)="updateStudent($event)" (onHideUpdateStudent)="hideUpdateStudent($event)"></app-student-update>
 
-<app-student-delete></app-student-delete>
+<app-student-delete [studentDetails]="studentDeleteDetails" *ngIf="deleteFlag" (onDeleteStudent)="DeleteOrHide($event)"></app-student-delete>
 
 
 <!-- <input [(ngModel)]="degree">

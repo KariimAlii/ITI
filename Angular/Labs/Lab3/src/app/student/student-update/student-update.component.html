@@ -1,1 +1,12 @@
-<p>student-update works!</p>
+
+
+<div>
+  <h1 class="alert alert-primary" role="alert">
+    <strong>Updating Student with ID:</strong> {{studentDetails.id}}
+    <button (click)="hideUpdate()" class="btn btn-primary">Hide</button>
+  </h1>
+  name: <input [(ngModel)]="studentDetails.name"> <br>
+  age: <input [(ngModel)]="studentDetails.age"> <br>
+  Department Num: <input [(ngModel)]="studentDetails.deptNo"> <br>
+  <button (click)="Save()" class="btn btn-success">Update</button>
+</div>
