@@ -54,8 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="AllStudents_Qiery.rdl" />
+    <Report Include="Department_StoredProcByID.rdl" />
     <Report Include="Department_StoredProcedure.rdl" />
-    <Report Include="Student_QueryById.rdl" />
+    <Report Include="Employee_Dept.rdl" />
+    <Report Include="SSAS_Report1_Matrix.rdl" />
+    <Report Include="SSAS_Report2_Tabular.rdl" />
+    <Report Include="Student_QueryByIdAndBirthDate.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
