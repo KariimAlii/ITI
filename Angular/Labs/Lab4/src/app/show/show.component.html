@@ -1,0 +1,17 @@
+<h1>{{title | uppercase}}</h1>
+<h2>{{bdate| date : 'MMMM,dd,yyyy' | uppercase}}</h2>
+
+
+<h2>{{x|power}}</h2>
+<h2>{{x|power:3}}</h2>
+<hr>
+<h3>List of Names</h3>
+
+<input type="text" [(ngModel)]="name">
+<a name="" id="" class="btn btn-primary" (click)="Add()">Add</a>
+<ul class="list-group">
+  <!-- <li class="list-group-item" *ngFor="let item of (names)"> -->
+  <li class="list-group-item" *ngFor="let item of (names|splice:'A')">
+    {{item}}
+  </li>
+</ul>
