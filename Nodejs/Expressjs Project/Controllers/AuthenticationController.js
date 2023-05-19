@@ -10,7 +10,6 @@ module.exports.login = async function (request,response,next) {
         const user = await Teacher.findOne({email});
         if (!user) throw new Error("Email Not Found!")
         const hash = user.password;
-        console.log(hash)
         const isPasswordValid = await bcrypt.compare(`${password}`,hash);
         if (!isPasswordValid) throw new Error ("Password Wrong!!")
         if (email === "k@gmail.com") {

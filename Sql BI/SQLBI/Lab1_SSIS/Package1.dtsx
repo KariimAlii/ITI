@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{D0DB4134-B051-4DDB-8171-FF902C004901}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{BF689635-BADA-4517-AB4C-5CF980765C63}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Web\My Github\ITI\Sql BI\SQLBI\Lab1_SSIS\Destination\Destination3.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Web\My Github\ITI\Sql BI\SQLBI\Lab1_SSIS\Destination\Destination3.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{D893661A-206F-49D6-A34B-BDB5C4BFCC8C}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Web\My Github\ITI\Sql BI\SQLBI\Lab1_SSIS\Destination\Sheet.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -406,7 +418,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Excel_Destination</property>
+                  name="OpenRowset">Excel_</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -441,8 +453,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1184,97 +1196,25 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="865,67" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Data Flow Task\Flat File Destination"
-          TopLeft="878,318" />
+          Size="181,42"
+          Id="Package\Data Flow Task\Flat File Destination 1"
+          TopLeft="524.5,290.5" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\Excel Destination"
           TopLeft="1122,292" />
         <NodeLayout
-          Size="181,42"
-          Id="Package\Data Flow Task\Flat File Destination 1"
-          TopLeft="524.5,290.5" />
+          Size="172,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="878,318" />
         <NodeLayout
           Size="155,42"
           Id="Package\Data Flow Task\Conditional Split"
           TopLeft="851,161" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="940,109">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.5,52"
-              Start="0,0"
-              End="-11.5,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="-4,26" />
-                  <mssgle:LineSegment
-                    End="-7.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.5,26"
-                    Point2="-11.5,26"
-                    Point3="-11.5,30" />
-                  <mssgle:LineSegment
-                    End="-11.5,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.75,31,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Less Than 25 years]"
-          TopLeft="928.5,203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-313.5,87.5"
-              Start="0,0"
-              End="-313.5,80">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.75"
-                    Point2="0,43.75"
-                    Point3="-4,43.75" />
-                  <mssgle:LineSegment
-                    End="-309.5,43.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-309.5,43.75"
-                    Point2="-313.5,43.75"
-                    Point3="-313.5,47.75" />
-                  <mssgle:LineSegment
-                    End="-313.5,80" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-208.79123046875,48.75,104.0824609375,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="865,67" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Greater Than 25 years]"
           TopLeft="953,203">
@@ -1344,6 +1284,78 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="70.27376953125,35.6701902748414,95.7024609375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="940,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.5,52"
+              Start="0,0"
+              End="-11.5,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="-4,26" />
+                  <mssgle:LineSegment
+                    End="-7.5,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.5,26"
+                    Point2="-11.5,26"
+                    Point3="-11.5,30" />
+                  <mssgle:LineSegment
+                    End="-11.5,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-13.75,31,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Less Than 25 years]"
+          TopLeft="928.5,203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-313.5,87.5"
+              Start="0,0"
+              End="-313.5,80">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.75"
+                    Point2="0,43.75"
+                    Point3="-4,43.75" />
+                  <mssgle:LineSegment
+                    End="-309.5,43.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-309.5,43.75"
+                    Point2="-313.5,43.75"
+                    Point3="-313.5,47.75" />
+                  <mssgle:LineSegment
+                    End="-313.5,80" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-208.79123046875,48.75,104.0824609375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

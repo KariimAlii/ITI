@@ -74,17 +74,22 @@ namespace SoftwareCompany.BL
         }
         public async Task<DepartmentReadDetailsDto?> GetDetails(int id)
         {
-            var departmentFromDB = await departmentRepo.GetWithTicketsAndDevelopers(id);
-            if (departmentFromDB == null)
+            Department? departmentFromDB = await departmentRepo.GetWithTicketsAndDevelopers(id);
+            if (departmentFromDB is null)
                 return null;
             return new DepartmentReadDetailsDto
             {
                 Id = departmentFromDB.Id,
                 Name = departmentFromDB.Name,
-                Tickets = departmentFromDB.Tickets.Select(t => new TicketChildReadDto
-                {
-                    DevelopersCount = t.Developers.Count
-                })
+                // List<Ticket> -----mapping----> List<TicketChildReadDto>
+                Tickets = departmentFromDB.Tickets
+                    .Select(t => new TicketChildReadDto
+                    {
+                        Id = t.Id,
+                        Description = t.Description,
+                        DevelopersCount = t.Developers.Count
+                    })
+                    .ToList()
             };
         }
         #endregion

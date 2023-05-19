@@ -51,6 +51,7 @@ namespace SoftwareCompany.DAL
         {
             return await context.Set<Department>()
                 .Include(d => d.Tickets)
+                //.Include(d => d.Tickets.Where(t => t.Id > 10)
                     .ThenInclude(t => t.Developers)
                 .FirstOrDefaultAsync(d => d.Id == id);
         }
