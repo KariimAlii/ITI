@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoftwareCompany.DAL.Data.Models
+namespace SoftwareCompany.APIs
 {
     public class CustomResponse
     {
