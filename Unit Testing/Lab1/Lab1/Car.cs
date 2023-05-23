@@ -76,7 +76,7 @@ namespace CarsApp
         public override bool Equals(object obj)
         {
             Car car = obj as Car;
-            return (car.Type == this.Type);
+            return (car.Type == this.Type && car.Velocity == this.Velocity && car.DrivingMode == this.DrivingMode);
         }
         #endregion
     }
