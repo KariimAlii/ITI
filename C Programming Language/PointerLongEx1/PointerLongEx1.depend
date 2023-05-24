@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1668558026 source:c:\users\arabtech\documents\codeblocks\pointerlongex1\main.c
+	<stdio.h>
+	<stdlib.h>
+

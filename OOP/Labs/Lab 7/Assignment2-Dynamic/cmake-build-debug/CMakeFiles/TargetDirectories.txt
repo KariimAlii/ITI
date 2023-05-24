@@ -1,0 +1,3 @@
+D:/Professional Web and BI/C++/Projects/Lab7 Dynamic/cmake-build-debug/CMakeFiles/Lab7.dir
+D:/Professional Web and BI/C++/Projects/Lab7 Dynamic/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Professional Web and BI/C++/Projects/Lab7 Dynamic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

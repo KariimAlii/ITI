@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1668742884 source:c:\users\arabtech\documents\codeblocks\strucex1\main.c
+	<stdio.h>
+	<stdlib.h>
+

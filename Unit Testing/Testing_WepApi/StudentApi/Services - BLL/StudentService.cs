@@ -12,21 +12,22 @@ namespace StudentApi.BLL
 {
     public class StudentService : IStudentService // Dependent
     {
-        private readonly IStudentRepository _studentRepository; // Dependency
-        private readonly ICourseRepository _courseRepository; // Dependency
-        //private readonly IUnityContainer _unityContainer;
-        private readonly IPaymentService _paymentService; // Dependency
+        private readonly IStudentRepository studentRepository; // Dependency
+        private readonly ICourseRepository courseRepository; // Dependency
+        private readonly IPaymentService paymentService; // Dependency
+        private readonly IUnityContainer unityContainer;
 
         public StudentService(
-            IStudentRepository studentRepository,
-            ICourseRepository courseRepository,
-            IPaymentService paymentService
+            IStudentRepository _studentRepository,
+            ICourseRepository _courseRepository,
+            IPaymentService _paymentService,
+            IUnityContainer _unityContainer
             )
         {
-            _studentRepository = studentRepository;
-            _courseRepository = courseRepository;
-            _paymentService = paymentService;
-            //_unityContainer = unityContainer;
+            studentRepository = _studentRepository;
+            courseRepository = _courseRepository;
+            paymentService = _paymentService;
+            unityContainer = _unityContainer;
         }
 
         public string Register(RegistrationInput input)
@@ -48,7 +49,7 @@ namespace StudentApi.BLL
                 Email = input.Email,
                 Password = input.Password
             };
-            _studentRepository.AddStudent(student);
+            studentRepository.AddStudent(student);
             return "Successful registration";
         }
 
@@ -66,7 +67,7 @@ namespace StudentApi.BLL
             if (string.IsNullOrEmpty(input.Password))
                 return "Empty password";
 
-            var student = _studentRepository.GetStudentByEmail(input.Email);
+            var student = studentRepository.GetStudentByEmail(input.Email);
             if (student == null)
                 return "User not found";
 
@@ -80,11 +81,11 @@ namespace StudentApi.BLL
         {
             try
             {
-                var student = _studentRepository.GetStudentById(input.StudentId);
+                var student = studentRepository.GetStudentById(input.StudentId);
                 if (student == null)
                     return "Student not found";
 
-                var course = _courseRepository.GetCourseById(input.CourseId);
+                var course = courseRepository.GetCourseById(input.CourseId);
                 if (course == null)
                     return "Course not found";
 
@@ -94,8 +95,8 @@ namespace StudentApi.BLL
                 if (input.AmountPaid <= 0)
                     return "Amount should be positive";
 
-                //var paymentService = GetPaymentMethod(input.Method);
-                var paymentResult = _paymentService.Pay(input.AmountPaid);
+                var paymentService = GetPaymentMethod(input.Method);
+                var paymentResult = paymentService.Pay(input.AmountPaid);
                 return $"Successful \r\nCourse {course.Name} is bought by {student.Name} with payment result {paymentResult}";
             }
             catch (Exception)
@@ -104,13 +105,13 @@ namespace StudentApi.BLL
             }
         }
 
-        //private IPaymentService GetPaymentMethod(PaymentMethod method)
-        //{
-        //    if (method == PaymentMethod.Cash)
-        //        return _unityContainer.Resolve<IPaymentService>("Cash");
-        //    else if (method == PaymentMethod.CreditCard)
-        //        return _unityContainer.Resolve<IPaymentService>("Card");
-        //    throw new System.NotImplementedException();
-        //}
+        private IPaymentService GetPaymentMethod(PaymentMethod method)
+        {
+            if (method == PaymentMethod.Cash)
+                return unityContainer.Resolve<IPaymentService>("Cash");
+            else if (method == PaymentMethod.CreditCard)
+                return unityContainer.Resolve<IPaymentService>("Card");
+            throw new System.NotImplementedException();
+        }
     }
 }

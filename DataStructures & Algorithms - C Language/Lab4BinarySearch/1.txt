@@ -1,0 +1,46 @@
+struct Node {
+    int Data;
+    struct Node* pLeft;
+    struct Node* pRight;
+};
+struct Node* CreateNode (int d) {
+    struct Node* ptr;
+    ptr = (struct Node*) malloc( sizeof(struct Node) );
+    if (ptr) {
+        ptr->Data = d;
+        ptr->pLeft = ptr->pRight = NULL;
+    }
+    return ptr;
+}
+struct Node* InsertNode (struct Node* pNode , int d) {
+    if (pNode == NULL) { // No List
+        pNode = CreateNode(d);
+    }
+    else if (pNode->Data >= d) {
+        pNode->pLeft = InsertNode(pNode->pLeft,d);
+    } else {
+        pNode->pRight = InsertNode(pNode->pRight,d);
+    }
+    return pNode;
+}
+void PreOrder (struct Node* pRoot) {
+    if (pRoot) {
+        printf("%d" , pRoot->Data);
+        PreOrder(pRoot->pLeft);
+        PreOrder(pRoot->pRight);
+    }
+}
+void InOrder (struct Node* pRoot) {
+    if (pRoot) {
+        InOrder(pRoot->pLeft);
+        printf("%d" , pRoot->Data);
+        InOrder(pRoot->pRight);
+    }
+}
+void PostOrder (struct Node* pRoot) {
+    if (pRoot) {
+        PostOrder(pRoot->pLeft);
+        PostOrder(pRoot->pRight);
+        printf("%d" , pRoot->Data);
+    }
+}

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1670320225 source:d:\professional web and bi\data structure\projects\lab2\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"myconfig.h"
+
+1670072189 d:\professional web and bi\data structure\projects\lab2\myconfig.h
+	<windows.h>
+	<conio.h>
+

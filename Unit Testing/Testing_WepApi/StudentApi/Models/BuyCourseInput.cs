@@ -10,6 +10,7 @@ namespace StudentApi.Models
         public int StudentId { get; set; }
         public int CourseId { get; set; }
         public int AmountPaid { get; set; }
+        public PaymentMethod Method { get; set; }
     }
 
 }

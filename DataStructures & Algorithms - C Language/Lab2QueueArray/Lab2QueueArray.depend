@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1670365716 source:d:\professional web and bi\data structure\projects\lab2queuearray\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"myconfig.h"
+
+1670072189 d:\professional web and bi\data structure\projects\lab2queuearray\myconfig.h
+	<windows.h>
+	<conio.h>
+

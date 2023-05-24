@@ -1,0 +1,3 @@
+D:/Professional Web and BI/C++/Projects/exams/cmake-build-debug/CMakeFiles/exams.dir
+D:/Professional Web and BI/C++/Projects/exams/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Professional Web and BI/C++/Projects/exams/cmake-build-debug/CMakeFiles/rebuild_cache.dir

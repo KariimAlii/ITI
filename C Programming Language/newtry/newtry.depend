@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1669925466 source:c:\users\arabtech\documents\codeblocks\newtry\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<windows.h>
+

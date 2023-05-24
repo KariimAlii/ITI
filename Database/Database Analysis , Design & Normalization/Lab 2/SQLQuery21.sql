@@ -1,0 +1,3 @@
+UPDATE Employee
+SET Superssn = 102672
+WHERE SSN = 102660

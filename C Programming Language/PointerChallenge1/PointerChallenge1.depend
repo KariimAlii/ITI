@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1668391281 source:c:\users\arabtech\documents\codeblocks\pointerchallenge1\main.c
+	<stdio.h>
+	<stdlib.h>
+

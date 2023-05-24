@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "DATALAB1.C": "cpp"
+    }
+}

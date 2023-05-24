@@ -35,7 +35,8 @@ namespace StudentApi
             container.RegisterType<IStudentRepository, StudentRepository>();
 
             container.RegisterType<ICourseRepository, CourseRepository>();
-            container.RegisterType<IPaymentService, CashService>();
+            container.RegisterType<IPaymentService, CashService>("Cash"); // ===> Named Registration
+            container.RegisterType<IPaymentService, CreditCardService>("CreditCard"); // ===> Named Registration
 
             container.RegisterType<ICourseService, CourseService>();
             container.RegisterType<IStudentService, StudentService>();

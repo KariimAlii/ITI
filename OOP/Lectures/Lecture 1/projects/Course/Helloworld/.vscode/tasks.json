@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label":"build hello world",
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:/cygwin64/bin/gcc.exe",
+            "args": [
+                "-g",
+                "-o",
+                "helloworld",
+                "helloworld.exe"
+            ],
+            "group":{
+                "kind": "build",
+                "isDefault": true
+            }
+}

@@ -1,0 +1,3 @@
+D:/Professional Web and BI/C++/Projects/Monofia/cmake-build-debug/CMakeFiles/Monofia.dir
+D:/Professional Web and BI/C++/Projects/Monofia/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Professional Web and BI/C++/Projects/Monofia/cmake-build-debug/CMakeFiles/rebuild_cache.dir

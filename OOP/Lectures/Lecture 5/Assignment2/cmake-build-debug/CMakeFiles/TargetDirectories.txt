@@ -1,0 +1,3 @@
+D:/Professional Web and BI/C++/Projects/Lec5Ex2/cmake-build-debug/CMakeFiles/Lec5Ex2.dir
+D:/Professional Web and BI/C++/Projects/Lec5Ex2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Professional Web and BI/C++/Projects/Lec5Ex2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

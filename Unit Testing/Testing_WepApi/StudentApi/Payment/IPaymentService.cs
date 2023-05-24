@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentApi.Payment
 {
-    internal interface IPaymentService
+    public interface IPaymentService
     {
         string Pay(double amount);
     }

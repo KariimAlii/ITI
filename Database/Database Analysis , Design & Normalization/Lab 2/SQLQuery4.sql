@@ -1,0 +1,1 @@
+Alter Table Project Add Foreign Key Dnum References department(Dnum)

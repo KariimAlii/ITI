@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1669942785 source:c:\users\arabtech\documents\codeblocks\newtry4\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	"myconfig.h"
+
+1669932040 c:\users\arabtech\documents\codeblocks\newtry4\myconfig.h
+	<windows.h>
+	<conio.h>
+

@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light mathjax-complete" lang="en-us" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="C# console app template changes in .NET 6 - .NET">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates">
+			<meta property="og:description" content="The .NET 6 project template for C# console apps uses top-level statements. Understand what&#39;s changed and how to use existing learning materials with the new syntax.">
+
+	<meta property="og:image" content="https://learn.microsoft.com/dotnet/media/dotnet-logo.png">
+
+	<meta property="og:image:alt" content="C# console app template changes in .NET 6 - .NET | Microsoft Learn">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="@docsmsft">
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="apiPlatform" content="dotnet">
+<meta name="author" content="tdykstra">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="description" content="The .NET 6 project template for C# console apps uses top-level statements. Understand what&#39;s changed and how to use existing learning materials with the new syntax.">
+<meta name="document_id" content="447e23ae-0256-d8c1-4dca-d31fe21602a5">
+<meta name="document_version_independent_id" content="926db74c-be79-f7cd-a4e9-e156dafa6287">
+<meta name="gitcommit" content="https://github.com/dotnet/docs/blob/140a55b20d5d8ff1007d295922710f4f4c5a0fd4/docs/core/tutorials/top-level-templates.md">
+<meta name="locale" content="en-us">
+<meta name="ms.author" content="tdykstra">
+<meta name="ms.custom" content="updateeachrelease">
+<meta name="ms.date" content="03/14/2022">
+<meta name="ms.devlang" content="dotnet">
+<meta name="ms.prod" content="dotnet-fundamentals">
+<meta name="ms.topic" content="tutorial">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs/blob/live/docs/core/tutorials/top-level-templates.md">
+<meta name="page_type" content="conceptual">
+<meta name="pdf_url_template" content="https://learn.microsoft.com/pdfstore/en-us/VS.core-docs/{branchName}{pdfName}">
+<meta name="recommendations" content="true">
+<meta name="schema" content="Conceptual">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="show_latex" content="true">
+<meta name="site_name" content="Docs">
+<meta name="toc_rel" content="../../fundamentals/toc.json">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="updated_at" content="2022-07-21 10:30 AM">
+<meta name="word_count" content="1151">
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/7696cda6-0510-47f6-8302-71bb5d2e28cf" data-source="generated">
+
+	
+
+	<meta name="scope" content=".NET">
+	<meta name="github_feedback_content_git_url" content="https://github.com/dotnet/docs/blob/main/docs/core/tutorials/top-level-templates.md">
+<link href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" rel="canonical">
+	<title>C# console app template changes in .NET 6 - .NET | Microsoft Learn</title>
+
+		<link rel="stylesheet" href="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/425dfcf4.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'dotnet/docs',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasPrintButton: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "tdykstra", url: "https://github.com/tdykstra" },
+						{ name: "Youssef1313", url: "https://github.com/Youssef1313" },
+						{ name: "BillWagner", url: "https://github.com/BillWagner" },
+						{ name: "IEvangelist", url: "https://github.com/IEvangelist" },
+						{ name: "gewarren", url: "https://github.com/gewarren" },
+						{ name: "adegeo", url: "https://github.com/adegeo" },
+						{ name: "svick", url: "https://github.com/svick" },
+						{ name: "kant2002", url: "https://github.com/kant2002" }
+],
+			mathjax: {
+			},
+		},
+		functions:{}
+	};
+	</script>
+	<script src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/wcp-consent.js.download"></script>
+	<script src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/ms.jsll-3.min.js.download"></script>
+
+	<script src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/67a45209.deprecation.js.download"></script>
+		<script src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/f35c3fbe.index-docs.js.download"></script><style></style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Learn","position":1,"@type":"ListItem","item":"https://learn.microsoft.com/en-us/"},{"name":".NET","position":2,"@type":"ListItem","item":"https://learn.microsoft.com/en-us/dotnet/"},{"name":".NET fundamentals","position":3,"@type":"ListItem","item":"https://learn.microsoft.com/en-us/dotnet/fundamentals/"}]}</script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body lang="en-us" dir="ltr"><div id="MathJax_Message" style="display: none;"></div>
+	<div class="header-holder has-default-focus">
+		<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">Skip to main content</a>
+
+		<div hidden="" id="cookie-consent-holder"></div><div id="banner-holder" class="has-default-focus has-overflow-hidden theme-light"><!----><section data-bi-name="tier1-event-banner" data-dismissable="disappearing" class="tier1-event-banner position-relative padding-top-md padding-bottom-md ignite-banner">
+		<div class="uhf-container display-flex-tablet align-items-center">
+			<div class="has-backdrop-filter-blur margin-right-xxl-tablet">
+				<h2 class="title is-2 margin-bottom-xs"><!---->Microsoft Ignite<!----></h2>
+				<p class="font-size-sm"><!---->October 12-14, 2022<!----></p>
+			</div>
+			<p class="container is-max-mobile display-none display-block-widescreen has-backdrop-filter-blur font-size-sm margin-left-none margin-right-xxl">
+				Join us Oct 12-14 to learn from product experts and deep dive into technical training and workshops that will level up your skillset.
+			</p>
+			<a data-bi-name="CTA" class="button margin-block-sm button-filled button-primary" href="https://ignite.microsoft.com/home?wt.mc_ID=ignite2022_esc_corp_soc_oo_notsocial_DOCS_DOCSBannerReg1">
+				<span><!---->Register now<!----></span>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-chevron-right-light"></span>
+				</span>
+			</a>
+		</div>
+		<button type="button" data-dismiss="" data-bi-name="close" class="button delete delete-lg position-absolute top-0 right-0 margin-xs margin-sm-tablet button-filled button-primary">
+			<span class="visually-hidden"><!---->Dismiss alert<!----></span>
+		</button>
+	</section><!----></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">This browser is no longer supported.</p>
+				<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+					<a href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info about Internet Explorer and Microsoft Edge					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!----> <div class="nav-bar-brand display-flex align-items-center padding-none margin-left-xs margin-left-none-tablet">
+		
+					<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+						 <div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				
+		<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+			<g data-name="MS-symbol">
+				<clippath>
+					<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+				</clippath>
+				<g clip-path="url(#a)">
+					<path d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z" class="fill-current-color fill-link-text-forced-colors color-text-subtle"></path>
+					<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+					<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+					<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+					<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+				</g>
+			</g>
+		</svg>
+	
+		  </div>
+					</a>
+			  
+	</div> 
+				
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="Global navigation" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->Documentation<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->Global navigation<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+				
+		<nav class="nav-bar-nav" role="navigation" aria-label="Global">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://learn.microsoft.com/en-us/">
+				<span><!---->Learn<!----></span>
+			</a>
+		</li>
+	
+				<!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline is-active" href="https://learn.microsoft.com/en-us/docs/">
+						<span><!---->Documentation<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/training/">
+						<span><!---->Training<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/certifications/">
+						<span><!---->Certifications<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/answers/products/">
+						<span><!---->Q&amp;A<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/samples/browse/">
+						<span><!---->Code Samples<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/shows/">
+						<span><!---->Shows<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://learn.microsoft.com/en-us/events/">
+						<span><!---->Events<!----></span>
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-131">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-131" aria-label="More">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button is-active" href="https://learn.microsoft.com/en-us/docs/">
+						Documentation
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/training/">
+						Training
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/certifications/">
+						Certifications
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/answers/products/">
+						Q&amp;A
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/samples/browse/">
+						Code Samples
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/shows/">
+						Shows
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://learn.microsoft.com/en-us/events/">
+						Events
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+				<span class="nav-bar-spacer"></span>
+				
+		<div class="nav-bar-search " id="ax-132" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form" aria-label="Search" action="https://learn.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input input-sm
+						
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-133-listbox" aria-controls="ax-133-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-133-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="site-search-input-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form-desktop" aria-label="Search" action="https://learn.microsoft.com/en-us/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-134" class="autocomplete-input input input-sm
+						control has-icons-left
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-135-listbox" aria-controls="ax-135-listbox" aria-activedescendant="" aria-label="Search" placeholder="Search" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-135-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-134-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value=".NET">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="Search" aria-expanded="false" aria-controls="ax-132">
+					
+		<span class="is-visually-hidden-mobile"><!---->Search<!----></span>
+		<span class="icon margin-left-xxs" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+				
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#"> Sign in </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="Your Account">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium border-radius-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box justify-content-flex-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium border-radius-rounded" aria-labelledby="displayName" alt="" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<h2 class="title font-size-lg">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</h2>
+						<p class="subtitle font-size-sm margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="padding-top-xs padding-bottom-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" href="https://learn.microsoft.com/en-us/users/me/activity/"><!---->Profile<!----></a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" href="https://learn.microsoft.com/en-us/users/me/settings/"><!---->Settings<!----></a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#"><!---->Sign out<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+			 <!----></div> <div class="nav-bar border-top is-hidden-mobile"><!----> 
+		<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://learn.microsoft.com/dotnet/">
+			<span>
+				.NET
+				
+			</span>
+		</a>
+	 
+		
+		<nav class="nav-bar-nav" role="navigation" aria-label="Site">
+			<ul class="nav-bar-nav-list">
+				
+				<!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-136">
+			<span><!---->Languages<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-136" aria-label="Languages">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/csharp/">
+						C#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/fsharp/">
+						F#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/visual-basic/">
+						Visual Basic
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-137">
+			<span><!---->Workloads<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-137" aria-label="Workloads">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0">
+						Web
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/xamarin/">
+						Mobile
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/azure/">
+						Cloud
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-138">
+			<span><!---->Desktop<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-138" aria-label="Desktop">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/?view=netdesktop-6.0">
+						Windows Presentation Foundation
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/desktop/winforms/?view=netdesktop-6.0">
+						Windows Forms
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/windows/uwp/">
+						Universal Windows apps
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/xamarin/mac/">
+						Xamarin for macOS
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-139">
+			<span><!---->Machine Learning &amp; Data<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-139" aria-label="Machine Learning &amp; Data">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/machine-learning/">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/spark/">
+						.NET for Apache Spark
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/ef/">
+						Entity Framework
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-140">
+			<span><!---->APIs<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-140" aria-label="APIs">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=net-6.0">
+						.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=netframework-4.8&amp;preserve-view=true">
+						.NET Framework
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=aspnetcore-6.0">
+						ASP.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=ml-dotnet&amp;preserve-view=true">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-141">
+			<span><!---->Resources<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-141" aria-label="Resources">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet">
+						What is .NET?
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides">
+						.NET Architecture Guides
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn">
+						Learning Materials
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download">
+						Downloads
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community">
+						Community
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support">
+						Support
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/">
+						Blog
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-142">
+			<span><!---->More<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-142" aria-label="More">
+			<!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-143">
+			<span><!---->Languages<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-143" aria-label="Languages">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/csharp/">
+						C#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/fsharp/">
+						F#
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/visual-basic/">
+						Visual Basic
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-144">
+			<span><!---->Workloads<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-144" aria-label="Workloads">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0">
+						Web
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/xamarin/">
+						Mobile
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/azure/">
+						Cloud
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-145">
+			<span><!---->Desktop<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-145" aria-label="Desktop">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/desktop/wpf/?view=netdesktop-6.0">
+						Windows Presentation Foundation
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/desktop/winforms/?view=netdesktop-6.0">
+						Windows Forms
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/windows/uwp/">
+						Universal Windows apps
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/xamarin/mac/">
+						Xamarin for macOS
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-146">
+			<span><!---->Machine Learning &amp; Data<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-146" aria-label="Machine Learning &amp; Data">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/machine-learning/">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/spark/">
+						.NET for Apache Spark
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/ef/">
+						Entity Framework
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-147">
+			<span><!---->APIs<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-147" aria-label="APIs">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=net-6.0">
+						.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=netframework-4.8&amp;preserve-view=true">
+						.NET Framework
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=aspnetcore-6.0">
+						ASP.NET
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://learn.microsoft.com/en-us/dotnet/api/?view=ml-dotnet&amp;preserve-view=true">
+						ML.NET
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  " aria-controls="ax-148">
+			<span><!---->Resources<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-right-light "></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-148" aria-label="Resources">
+			<!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet">
+						What is .NET?
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn/dotnet/architecture-guides">
+						.NET Architecture Guides
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/learn">
+						Learning Materials
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/download">
+						Downloads
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/community">
+						Community
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://dotnet.microsoft.com/platform/support">
+						Support
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class="has-external-link-indicator nav-bar-button " href="https://devblogs.microsoft.com/dotnet/">
+						Blog
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+		<span class="nav-bar-spacer"></span>
+		
+		<ol class="nav-bar-list">
+			 
+		<li class="nav-bar-item ">
+			<a class="button button-sm button-primary button-filled" href="https://dotnet.microsoft.com/download">
+				Download .NET
+			</a>
+		</li>
+	
+		</ol>
+	 
+	 <!----></div> <!----></header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+Table of contents						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>Exit focus mode</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus">
+			<!-- liquid-tag banners sectional -->
+		</div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="Primary" data-bi-name="left toc" style="width: 335.8px; top: 24px; bottom: 24px;"><form action="javascript:" role="search" aria-label="Search" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-0">Search</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-0" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" type="text" aria-expanded="false" aria-owns="ax-1-listbox" aria-controls="ax-1-listbox" aria-activedescendant="" placeholder="Filter by title" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-1-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-0-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="Table of contents" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/fundamentals/">.NET documentation</a></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Get started</span></li><li class="tree-item is-expanded" aria-setsize="16" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Overview</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/core/introduction">Introduction to .NET</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/fundamentals/implementations">.NET implementations</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/standard/class-libraries">.NET class libraries</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="4" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/standard/net-standard">.NET Standard overview</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/core/releases-and-support">Releases, patches, and support</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="6" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/fundamentals/standards">Ecma standards</a></li><li role="none"><a aria-setsize="8" aria-level="2" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/standard/glossary">.NET glossary</a></li><li class="tree-item is-expanded" aria-setsize="8" aria-level="2" aria-posinset="8" role="treeitem" tabindex="-1" id="title-3-1_8-2" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tutorials</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="5" aria-level="3" aria-posinset="1" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" aria-current="page">.NET 6 template changes</a></li><li class="tree-item" aria-setsize="5" aria-level="3" aria-posinset="2" role="treeitem" tabindex="-1" id="title-3-1_8-2_2-3" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Use Visual Studio</span></li><li class="tree-item" aria-setsize="5" aria-level="3" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1_8-2_3-3" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Use Visual Studio Code</span></li><li class="tree-item" aria-setsize="5" aria-level="3" aria-posinset="4" role="treeitem" tabindex="-1" id="title-3-1_8-2_4-3" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Use Visual Studio for Mac</span></li><li role="none"><a aria-setsize="5" aria-level="3" aria-posinset="5" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/">More tutorials</a></li></ul></li></ul></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>What's new in .NET</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Tools and diagnostics</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Execution model</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" id="title-7-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Deployment models</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" id="title-8-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>DevOps</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Fundamental coding components</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="10" role="treeitem" tabindex="-1" id="title-10-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Runtime libraries</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="11" role="treeitem" tabindex="-1" id="title-11-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Data access</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="12" role="treeitem" tabindex="-1" id="title-12-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Parallel processing, concurrency, and async</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="13" role="treeitem" tabindex="-1" id="title-13-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Testing</span></li><li role="none"><a aria-setsize="16" aria-level="1" aria-posinset="14" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://learn.microsoft.com/en-us/dotnet/standard/security/">Security</a></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="15" role="treeitem" tabindex="-1" id="title-15-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Advanced topics</span></li><li class="tree-item" aria-setsize="16" aria-level="1" aria-posinset="16" role="treeitem" tabindex="-1" id="title-16-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>Migration guide</span></li></ul><a class="button button-sm button-clear justify-content-flex-start has-inner-focus margin-top-xxs border-top border-bottom flex-shrink-0" href="https://learn.microsoft.com/en-us/dotnet/opbuildpdf/fundamentals/toc.pdf?branch=live" data-bi-name="downloadPdf" rel="nofollow"><!----> <span class="icon font-size-xs has-text-subtle">
+				<span aria-hidden="true" class="docon docon-dictionary-download"></span>
+			</span>
+			<span><!---->Download PDF<!----></span><!----></a></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="en-us" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+										<summary class="button button-clear button-primary button-sm" aria-label="All breadcrumbs">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/">
+										Learn
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/dotnet/">
+										.NET
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://learn.microsoft.com/en-us/dotnet/fundamentals/">
+										.NET fundamentals
+									</a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/"><!---->Learn<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://learn.microsoft.com/en-us/dotnet/"><!---->.NET<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/" style=""><!---->.NET fundamentals<!----></a>
+								</li>
+							<!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs>
+
+									<div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="Read in English" data-bi-name="language-toggle" data-read-in-link="" hidden="" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">Read in English</span>
+										</a>
+
+											<button type="button" class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-list-type="collection" data-bi-name="collection" title="Add C# console app template changes in .NET 6 - .NET | Microsoft Learn to a collection" data-pressed="false">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">Save</span>
+											</button>
+										
+
+										
+
+											<a data-feedback-section-link="" aria-label="Feedback" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#feedback" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" data-bi-name="comments" title="Send feedback about this page">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-comment-lines"></span>
+												</span>
+											</a>
+										
+
+											<a data-contenteditbtn="" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/dotnet/docs/blob/main/docs/core/tutorials/top-level-templates.md" data-original_content_git_url="https://github.com/dotnet/docs/blob/live/docs/core/tutorials/top-level-templates.md" data-original_content_git_url_template="{repo}/blob/{branch}/docs/core/tutorials/top-level-templates.md" data-pr_repo="" data-pr_branch="">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-edit-outline"></span>
+												</span>
+											</a>
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="More actions">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" aria-label="Contents" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">Table of contents</span>
+													</button>
+
+												<a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="Read in English" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" hidden="" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">Read in English</span>
+												</a>
+
+													<button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="collection" data-bi-name="collection" title="Add C# console app template changes in .NET 6 - .NET | Microsoft Learn to a collection" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">Save</span>
+													</button>
+
+
+													<a data-feedback-section-link="" aria-label="Feedback" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#feedback" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" data-bi-name="comments" title="Send feedback about this page" data-page-action-item="overflow-mobile">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-comment-lines"></span>
+														</span>
+														<span>
+Feedback														</span>
+													</a>
+
+													<a data-contenteditbtn="" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" aria-label="Edit" title="Edit This Document" data-bi-name="edit" href="https://github.com/dotnet/docs/blob/main/docs/core/tutorials/top-level-templates.md" data-original_content_git_url="https://github.com/dotnet/docs/blob/live/docs/core/tutorials/top-level-templates.md" data-original_content_git_url_template="{repo}/blob/{branch}/docs/core/tutorials/top-level-templates.md" data-pr_repo="" data-pr_branch="">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-edit-outline"></span>
+														</span>
+														<span>Edit</span>
+													</a>
+
+													<button class="button button-block button-clear button-sm justify-content-flex-start has-inner-focus" title="Print" type="button" aria-label="Print" data-bi-name="print" data-page-action-item="overflow-all" data-popover-close="" data-print-page="" data-check-hidden="true" hidden="">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-print"></span>
+														</span>
+														<span>Print</span>
+													</button>
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates%3FWT.mc_id%3Dtwitter&amp;text=C%23%20console%20app%20template%20changes%20in%20.NET%206%20-%20.NET%20%7C%20Microsoft%20Learn&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5BShared%20Article%5D%20C%23%20console%20app%20template%20changes%20in%20.NET%206%20-%20.NET%20%7C%20Microsoft%20Learn&amp;body=C%23%20console%20app%20template%20changes%20in%20.NET%206%20-%20.NET%20%7C%20Microsoft%20Learn%0A%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>Email</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="Contents" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">Table of contents</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="net-6-c-console-app-template-generates-top-level-statements">.NET 6 C# console app template generates top-level statements</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+												<li>
+Article												</li>
+												<li>
+													<time class="" data-article-date="" aria-label="Article review date" datetime="2022-07-21T10:30:00.000Z" data-article-date-source="git">07/21/2022</time>
+												</li>
+														<li class="readingTime">5 minutes to read</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																8 contributors
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived="">
+	<button class="thumb-rating-button like link-button margin-xxs margin-right-none" data-binary-rating-response="rating-yes" title="This article is helpful" type="button" data-bi-name="rating-yes" data-bi-sat="1">
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button class="thumb-rating-button dislike link-button margin-xxs margin-right-none" data-binary-rating-response="rating-no" title="This article is not helpful" type="button" data-bi-name="rating-no" data-bi-sat="0">
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline"><!---->
+		<h3><!---->In this article<!----></h3>
+		<ol>
+			<!---->
+					<li>
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-new-program-style"><!---->Use the new program style<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives"><!---->Implicit using directives<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#global-using-directives"><!---->Global using directives<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-old-program-style"><!---->Use the old program style<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#template-feedback"><!---->Template feedback<!----></a>
+					</li>
+				<!---->
+		</ol>
+	<!----></nav>
+
+								<!-- <content> -->
+									<p>Starting with .NET 6, the project template for new C# console apps generates the following code in the <em>Program.cs</em> file:</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">C#</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="// See https://aka.ms/new-console-template for more information
+Console.WriteLine(&quot;Hello, World!&quot;);
+"><span><span class="hljs-comment">// See https://aka.ms/new-console-template for more information</span>
+Console.WriteLine(<span class="hljs-string">"Hello, World!"</span>);
+</span></code></pre>
+<p>The new output uses recent C# features that simplify the code you need to write for a program. For .NET 5 and earlier versions, the console app template generates the following code:</p>
+<div class="codeHeader" id="code-try-1" data-bi-name="code-header"><span class="language">C#</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-csharp" data-author-content="using System;
+
+namespace MyApp // Note: actual namespace depends on the project name.
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(&quot;Hello World!&quot;);
+        }
+    }
+}
+"><span><span class="hljs-keyword">using</span> System;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">MyApp</span> <span class="hljs-comment">// Note: actual namespace depends on the project name.</span>
+{
+    <span class="hljs-keyword">internal</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-built_in">string</span>[] args</span>)</span>
+        {
+            Console.WriteLine(<span class="hljs-string">"Hello World!"</span>);
+        }
+    }
+}
+</span></code></pre>
+<p>These two forms represent the same program. Both are valid with C# 10.0. When you use the newer version, you only need to write the body of the <code>Main</code> method. The compiler synthesizes a <code>Program</code> class with a <code>Main</code> method and places all your top level statements in that <code>Main</code> method. You don't need to include the other program elements, the compiler generates them for you. You can learn more about the code the compiler generates when you use top level statements in the article on <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements" data-linktype="relative-path">top level statements</a> in the C# Guide's fundamentals section.</p>
+<p>You have two options to work with tutorials that haven't been updated to use .NET 6+ templates:</p>
+<ul>
+<li>Use the new program style, adding new top-level statements as you add features.</li>
+<li>Convert the new program style to the older style, with a <code>Program</code> class and a <code>Main</code> method.</li>
+</ul>
+<p>If you want to use the old templates, see <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-old-program-style" data-linktype="self-bookmark">Use the old program style</a> later in this article.</p>
+<h2 id="use-the-new-program-style" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-new-program-style" aria-labelledby="use-the-new-program-style"></a>Use the new program style</h2>
+<p>The features that make the new program simpler are <em>top-level statements</em>, <em>global <code>using</code> directives</em>, and <em>implicit <code>using</code> directives</em>.</p>
+<p>The term <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements" data-linktype="relative-path"><em>top-level statements</em></a> means the compiler generates the class and method elements for your main program. The compiler generated class and <code>Main</code> method are declared in the global namespace. You can look at the code for the new application and imagine that it contains the statements inside the <code>Main</code> method generated by earlier templates, but in the global namespace.</p>
+<p>You can add more statements to the program, just like you can add more statements to your <code>Main</code> method in the traditional style. You can <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements#args" data-linktype="relative-path">access <code>args</code> (command-line arguments)</a>, <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements#await" data-linktype="relative-path">use <code>await</code></a>, and <a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements#exit-code-for-the-process" data-linktype="relative-path">set the exit code</a>. You can even add functions. They're created as local functions nested inside the generated <code>Main</code> method. Local functions can't include any access modifiers (for example, <code>public</code> or <code>protected</code>).</p>
+<p>Both top-level statements and <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives" data-linktype="self-bookmark">implicit <code>using</code> directives</a> simplify the code that makes up your application. To follow an existing tutorial, add any new statements to the <em>Program.cs</em> file generated by the template. You can imagine that the statements you write are between the open and closing braces in the <code>Main</code> method in the instructions of the tutorial.</p>
+<p>If you'd prefer to use the older format, you can copy the code from the second example in this article, and continue the tutorial as before.</p>
+<p>You can learn more about top-level statements in the tutorial exploration on <a href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/top-level-statements" data-linktype="relative-path">top-level statements</a>.</p>
+<h2 id="implicit-using-directives" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives" aria-labelledby="implicit-using-directives"></a>Implicit <code>using</code> directives</h2>
+<p>The term <em>implicit <code>using</code> directives</em> means the compiler automatically adds a set of <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive" data-linktype="relative-path"><code>using</code> directives</a> based on the project type.  For console applications, the following directives are implicitly included in the application:</p>
+<ul>
+<li><code>using System;</code></li>
+<li><code>using System.IO;</code></li>
+<li><code>using System.Collections.Generic;</code></li>
+<li><code>using System.Linq;</code></li>
+<li><code>using System.Net.Http;</code></li>
+<li><code>using System.Threading;</code></li>
+<li><code>using System.Threading.Tasks;</code></li>
+</ul>
+<p>Other application types include more namespaces that are common for those application types.</p>
+<p>If you need <code>using</code> directives that aren't implicitly included, you can add them to the <em>.cs</em> file that contains top-level statements or to other <em>.cs</em> files. For <code>using</code> directives that you need in all of the <em>.cs</em> files in an application, use <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#global-using-directives" data-linktype="self-bookmark">global <code>using</code> directives</a>.</p>
+<h3 id="disable-implicit-using-directives" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#disable-implicit-using-directives" aria-labelledby="disable-implicit-using-directives"></a>Disable implicit <code>using</code> directives</h3>
+<p>If you want to remove this behavior and manually control all namespaces in your project, add <a href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#implicitusings" data-linktype="relative-path"><code>&lt;ImplicitUsings&gt;disable&lt;/ImplicitUsings&gt;</code></a> to your project file in the <code>&lt;PropertyGroup&gt;</code> element, as shown in the following example:</p>
+<div class="codeHeader" id="code-try-2" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    ...
+    &lt;ImplicitUsings&gt;disable&lt;/ImplicitUsings&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">Project</span> <span class="hljs-attr">Sdk</span>=<span class="hljs-string">"Microsoft.NET.Sdk"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">PropertyGroup</span>&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">ImplicitUsings</span>&gt;</span>disable<span class="hljs-tag">&lt;/<span class="hljs-name">ImplicitUsings</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">PropertyGroup</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">Project</span>&gt;</span>
+</span></code></pre>
+<h2 id="global-using-directives" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#global-using-directives" aria-labelledby="global-using-directives"></a>Global <code>using</code> directives</h2>
+<p>A <em>global <code>using</code> directive</em> imports a namespace for your whole application instead of a single file. These global directives can be added either by adding a <a href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#using" data-linktype="relative-path"><code>&lt;Using&gt;</code></a> item to the project file, or by adding the <code>global using</code> directive to a code file.</p>
+<p>You can also add a <a href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#using" data-linktype="relative-path"><code>&lt;Using&gt;</code></a> item with a <code>Remove</code> attribute to your project file to remove a specific <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives" data-linktype="self-bookmark">implicit <code>using</code> directive</a>. For example, if the implicit <code>using</code> directives feature is turned on with <a href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#implicitusings" data-linktype="relative-path"><code>&lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;</code></a>, adding the following <code>&lt;Using&gt;</code> item removes the <code>System.Net.Http</code> namespace from those that are implicitly imported:</p>
+<div class="codeHeader" id="code-try-3" data-bi-name="code-header"><span class="language">XML</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-xml" data-author-content="&lt;ItemGroup&gt;
+  &lt;Using Remove=&quot;System.Net.Http&quot; /&gt;
+&lt;/ItemGroup&gt;
+"><span><span class="hljs-tag">&lt;<span class="hljs-name">ItemGroup</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Using</span> <span class="hljs-attr">Remove</span>=<span class="hljs-string">"System.Net.Http"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ItemGroup</span>&gt;</span>
+</span></code></pre>
+<h2 id="use-the-old-program-style" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-old-program-style" aria-labelledby="use-the-old-program-style"></a>Use the old program style</h2>
+<p>While a .NET 6 console app template generates the new style of top-level statements programs, using .NET 5 doesn't. By creating a .NET 5 project, you'll receive the old program style. Then, you can edit the project file to target .NET 6 but retain the old program style for the <em>Program.cs</em> file.</p>
+<div class="alert is-primary">
+<p class="alert-title"><span class="docon docon-status-info-outline" aria-hidden="true"></span> Important</p>
+<p>Creating a project that targets .NET 5 requires the .NET 5 templates. The .NET 5 templates can be installed manually with the <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new-sdk-templates#console" data-linktype="relative-path"><code>dotnet new --install</code> command</a> or by <a href="https://dotnet.microsoft.com/download/dotnet/5.0" data-linktype="external">installing the .NET 5 SDK</a>.</p>
+</div>
+<ol>
+<li><p>Create a new project that targets .NET 5.</p>
+<div class="codeHeader" id="code-try-4" data-bi-name="code-header"><span class="language">.NET CLI</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-dotnetcli" data-author-content="dotnet new console --framework net5.0
+"><span><span class="hljs-keyword">dotnet</span> <span class="hljs-keyword">new</span> console<span class="hljs-parameter"> --framework</span> net5.<span class="hljs-number">0</span>
+</span></code></pre>
+</li>
+<li><p>Open the project file in a text editor and change <code>&lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;</code> to <code>&lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;</code>.</p>
+<p>Here's a file diff that illustrates the changes:</p>
+<div class="codeHeader" id="code-try-5" data-bi-name="code-header"><span class="language">diff</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-diff" data-author-content="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+-   &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
++   &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+"><span>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+<span class="hljs-deletion">-   &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;</span>
+<span class="hljs-addition">+   &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;</span>
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</span></code></pre>
+</li>
+<li><p>Optional step: you can still use some of the newer .NET 6 and C# features by adding the properties for <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives" data-linktype="self-bookmark">implicit <code>using</code> directives</a> and <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language#nullable" data-linktype="relative-path">nullable context</a> to the project file.</p>
+<div class="codeHeader" id="code-try-6" data-bi-name="code-header"><span class="language">diff</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-diff" data-author-content="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
++   &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
++   &lt;Nullable&gt;enable&lt;/Nullable&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+"><span>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
+<span class="hljs-addition">+   &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;</span>
+<span class="hljs-addition">+   &lt;Nullable&gt;enable&lt;/Nullable&gt;</span>
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</span></code></pre>
+</li>
+</ol>
+<h3 id="use-the-old-program-style-in-visual-studio" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-old-program-style-in-visual-studio" aria-labelledby="use-the-old-program-style-in-visual-studio"></a>Use the old program style in Visual Studio</h3>
+<p>When you create a new console project in Visual Studio, you're prompted with a dropdown box that identifies which target framework you want to use. Change that value to <strong>5.0</strong>. After the project is created, edit the project file to change it back to <strong>6.0</strong>.</p>
+<ol>
+<li><p>When you create a new project, the setup steps will navigate to the <strong>Additional information</strong> setup page. On this page, change the framework setting from <strong>.NET 6.0 (Long-term support)</strong> to <strong>.NET 5.0</strong>, and then select the <strong>Create</strong> button.</p>
+<p><span class="mx-imgBorder">
+<img src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/vs-additional-information.png" alt="Visual Studio select the target .NET Framework 5.0" data-linktype="relative-path">
+</span>
+</p>
+</li>
+<li><p>After your project is created, find the <strong>Project Explorer</strong> pane. Double-click on the project file and change <code>&lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;</code> to <code>&lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;</code>.</p>
+<p>Here's a file diff that illustrates the changes:</p>
+<div class="codeHeader" id="code-try-7" data-bi-name="code-header"><span class="language">diff</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-diff" data-author-content="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+-   &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;
++   &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+"><span>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+<span class="hljs-deletion">-   &lt;TargetFramework&gt;net5.0&lt;/TargetFramework&gt;</span>
+<span class="hljs-addition">+   &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;</span>
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</span></code></pre>
+<p>Alternatively, you can right-click on the project in the <strong>Solution Explorer</strong> pane, and select <strong>Properties</strong>. This opens up a settings page where you can change the <strong>Target framework</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/vs-project-properties.png" alt="Edit the project properties for Visual Studio and set the .NET Framework version." data-linktype="relative-path">
+</span>
+</p>
+</li>
+<li><p>Optional step: you can still use some of the newer .NET 6 and C# features by adding the properties for <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives" data-linktype="self-bookmark">implicit <code>using</code> directives</a> and <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language#nullable" data-linktype="relative-path">nullable context</a> to the project file.</p>
+<div class="codeHeader" id="code-try-8" data-bi-name="code-header"><span class="language">diff</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>Copy</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-diff" data-author-content="&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
++   &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;
++   &lt;Nullable&gt;enable&lt;/Nullable&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+"><span>&lt;Project Sdk="Microsoft.NET.Sdk"&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net6.0&lt;/TargetFramework&gt;
+<span class="hljs-addition">+   &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;</span>
+<span class="hljs-addition">+   &lt;Nullable&gt;enable&lt;/Nullable&gt;</span>
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</span></code></pre>
+</li>
+</ol>
+<h2 id="template-feedback" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#template-feedback" aria-labelledby="template-feedback"></a>Template feedback</h2>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/program-structure/top-level-statements" data-linktype="relative-path">Top-level statements</a> is a new feature in .NET 6. Add an up or down vote in <a href="https://github.com/dotnet/docs/issues/27420" data-linktype="external">GitHub issue #27420</a> to let us know if you support the use of this feature in project templates.</p>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print margin-bottom-md margin-bottom-none-desktop"><!---->
+			<hr class="hr">
+			<h2 class="title is-3 margin-top-sm" id="recommended-content"><!---->Recommended content<!----></h2>
+			
+		<ul id="recommendations-list" aria-live="polite" aria-relevant="additions" aria-labelledby="recommended-content" class="margin-bottom-sm">
+			<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs5001?source=recommendations" data-bi-name="recommendation-item-0">
+									<h3><!---->Compiler Error CS5001<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn more about: Compiler Error CS5001<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs8400?source=recommendations" data-bi-name="recommendation-item-1">
+									<h3><!---->Compiler Error CS8400<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn more about: Compiler Error CS8400<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code?source=recommendations" data-bi-name="recommendation-item-2">
+									<h3><!---->Create a .NET console application using Visual Studio Code - .NET<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to create a .NET console application using Visual Studio Code and the .NET CLI.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code?source=recommendations" data-bi-name="recommendation-item-3">
+									<h3><!---->Debug a .NET console application using Visual Studio Code - .NET<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to debug a .NET console app using Visual Studio Code.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?source=recommendations" data-bi-name="recommendation-item-4">
+									<h3><!---->C# unit test tutorial - Visual Studio (Windows)<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to create, run, and customize a series of unit tests using the Microsoft unit test framework for managed code and Visual Studio Test Explorer.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/testing-library-with-visual-studio-code?source=recommendations" data-bi-name="recommendation-item-5">
+									<h3><!---->Test a .NET class library using Visual Studio Code - .NET<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to use Visual Studio Code and the .NET CLI to create and run a unit test project for a .NET class library.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/top-level-statements?source=recommendations" data-bi-name="recommendation-item-6">
+									<h3><!---->Top-level statements - C# tutorial<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->This tutorial shows how you can use top-level statements to experiment and prove concepts while exploring your ideas<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://learn.microsoft.com/en-us/visualstudio/ide/reference/generate-constructor?source=recommendations" data-bi-name="recommendation-item-7">
+									<h3><!---->Generate a constructor quick action - Visual Studio (Windows)<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Learn how to use the Quick Actions and Refactorings menu to immediately generate the code for a new constructor on a class.<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+		</ul>
+		
+				<div class="buttons buttons-centered has-background-linethrough">
+					
+		<button aria-expanded="false" data-show-more="" class="button button-sm margin-bottom-none show-more-button" aria-controls="recommendations-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->Show more<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	
+				</div>
+		  
+	
+		<!----></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden=""></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+
+						<!-- feedback section -->
+<section class="feedback-section position-relative" data-bi-name="feedback-section">
+
+    <h2 id="feedback" class="title is-3 margin-top-sm">Feedback</h2>
+
+    <div class="alert choose-feedback-type">
+        <p id="send-feedback-about">Submit and view feedback for</p>
+
+        <div class="choose-feedback-buttons margin-top-xs">
+                <a class="button has-external-link-indicator feedback-type-product margin-bottom-xxs" aria-label="Send feedback about this product" href="https://aka.ms/feedback/report?space=61" data-bi-name="product-feedback">
+                    <span>This product</span>
+                </a>
+
+			<a class="button feedback-type-product margin-bottom-xxs github-link" aria-label="Send feedback about this page" data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20learn.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20447e23ae-0256-d8c1-4dca-d31fe21602a5%0A*%20Version%20Independent%20ID%3A%20926db74c-be79-f7cd-a4e9-e156dafa6287%0A*%20Content%3A%20%5BC%23%20console%20app%20template%20changes%20in%20.NET%206%20-%20.NET%5D(https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fdotnet%2Fcore%2Ftutorials%2Ftop-level-templates)%0A*%20Content%20Source%3A%20%5Bdocs%2Fcore%2Ftutorials%2Ftop-level-templates.md%5D(https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Fmain%2Fdocs%2Fcore%2Ftutorials%2Ftop-level-templates.md)%0A*%20Product%3A%20**dotnet-fundamentals**%0A*%20GitHub%20Login%3A%20%40tdykstra%0A*%20Microsoft%20Alias%3A%20**tdykstra**">
+				<span aria-hidden="true" class="docon docon-brand-github padding-right-xxs"></span>
+				<span>This page</span>
+			</a>
+        </div>
+    </div>
+
+    <div class="action-container display-flex justify-content-flex-end margin-block-xxs">
+        <a class="view-on-github has-external-link-indicator" data-bi-name="view-on-github" href="https://github.com/dotnet/docs/issues?utf8=%E2%9C%93&amp;q=%22926db74c-be79-f7cd-a4e9-e156dafa6287%22&amp;in=body">
+            <span aria-hidden="true" class="docon docon-brand-github"></span>
+            <span>View all page feedback</span>
+        </a>
+    </div>
+</section>
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden=""></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://learn.microsoft.com/en-us/locale?target=https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden=""></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden=""></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="Article Outline"><!---->
+		<article class="border border-radius-lg overflow-hidden ">
+			<div class="padding-block-xxs padding-inline-xs font-weight-semibold border-bottom font-size-md display-flex align-items-center background-color-body-medium">
+		<span class="icon margin-right-xxs">
+		<span class="docon docon-bulleted-list-three-items"></span>
+	</span><span><!---->In this article<!----></span>
+	</div> 
+		<ul id="right-rail-in-this-article-list" aria-live="polite" aria-relevant="additions" class="padding-xxs">
+			<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-new-program-style"><!---->Use the new program style<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#implicit-using-directives"><!---->Implicit using directives<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#global-using-directives"><!---->Global using directives<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#use-the-old-program-style"><!---->Use the old program style<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates#template-feedback"><!---->Template feedback<!----></a>
+					</li>
+				<!---->
+		</ul>
+	 <div class="border-top"><!---->
+		<button aria-expanded="false" data-show-more="" class="button button-clear button-block has-inner-focus" aria-controls="right-rail-in-this-article-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->Show more<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	<!----></div>
+		</article>
+	<!----></nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://learn.microsoft.com/en-us/locale?target=https://learn.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates" data-bi-name="select-locale" aria-label="Content language selector. Currently set to English (United States).">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">English (United States)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="Theme" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>Theme</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Light					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+Dark					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+High contrast					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">Blog</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/contribute/" data-bi-name="contributorGuide">Contribute</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+				<li><a data-mscc-ic="false" href="https://learn.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+		<script src="./C# console app template changes in .NET 6 - .NET _ Microsoft Learn_files/MathJax.js.download" integrity="sha384-RLsAi7wiVvnmHrRjlVvUjU45C0bfsIBg6Gsxue6azjJi+lA5q5uK+XbGzO3yn5g1" crossorigin="anonymous"></script>
+	<div id="action-panel" role="region" aria-label="Action Panel" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>

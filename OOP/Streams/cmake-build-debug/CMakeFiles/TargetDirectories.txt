@@ -1,0 +1,3 @@
+D:/Professional Web and BI/C++/Projects/Streams/cmake-build-debug/CMakeFiles/Streams.dir
+D:/Professional Web and BI/C++/Projects/Streams/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Professional Web and BI/C++/Projects/Streams/cmake-build-debug/CMakeFiles/rebuild_cache.dir
