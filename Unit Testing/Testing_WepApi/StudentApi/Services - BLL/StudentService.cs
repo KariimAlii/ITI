@@ -15,19 +15,16 @@ namespace StudentApi.BLL
         private readonly IStudentRepository studentRepository; // Dependency
         private readonly ICourseRepository courseRepository; // Dependency
         private readonly IPaymentService paymentService; // Dependency
-        private readonly IUnityContainer unityContainer;
 
         public StudentService(
             IStudentRepository _studentRepository,
             ICourseRepository _courseRepository,
-            IPaymentService _paymentService,
-            IUnityContainer _unityContainer
+            IPaymentService _paymentService
             )
         {
             studentRepository = _studentRepository;
             courseRepository = _courseRepository;
             paymentService = _paymentService;
-            unityContainer = _unityContainer;
         }
 
         public string Register(RegistrationInput input)
@@ -95,7 +92,7 @@ namespace StudentApi.BLL
                 if (input.AmountPaid <= 0)
                     return "Amount should be positive";
 
-                var paymentService = GetPaymentMethod(input.Method);
+                //var paymentService = GetPaymentMethod(input.Method);
                 var paymentResult = paymentService.Pay(input.AmountPaid);
                 return $"Successful \r\nCourse {course.Name} is bought by {student.Name} with payment result {paymentResult}";
             }
@@ -105,13 +102,13 @@ namespace StudentApi.BLL
             }
         }
 
-        private IPaymentService GetPaymentMethod(PaymentMethod method)
-        {
-            if (method == PaymentMethod.Cash)
-                return unityContainer.Resolve<IPaymentService>("Cash");
-            else if (method == PaymentMethod.CreditCard)
-                return unityContainer.Resolve<IPaymentService>("Card");
-            throw new System.NotImplementedException();
-        }
+        //private IPaymentService GetPaymentMethod(PaymentMethod method)
+        //{
+        //    if (method == PaymentMethod.Cash)
+        //        return unityContainer.Resolve<IPaymentService>("Cash");
+        //    else if (method == PaymentMethod.CreditCard)
+        //        return unityContainer.Resolve<IPaymentService>("Card");
+        //    throw new System.NotImplementedException();
+        //}
     }
 }
