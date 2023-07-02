@@ -1,0 +1,45 @@
+<!-- <app-rating [rateValue]="1"></app-rating>
+<app-rating [rateValue]="2"></app-rating>
+<app-rating [rateValue]="3"></app-rating>
+<app-rating [rateValue]="4"></app-rating>
+<app-rating [rateValue]="5"></app-rating> -->
+
+<!-- <p-rating [(ngModel)]="value" [cancel]="false" [stars]="10">
+  <ng-template pTemplate="cancel">
+    <img src="https://primefaces.org/cdn/primeng/images/demo/rating/cancel.png" width="25px" height="25px" />
+  </ng-template>
+  <ng-template pTemplate="onicon">
+      <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon-active.png" width="25px" height="25px" />
+  </ng-template>
+  <ng-template pTemplate="officon">
+      <img src="https://primefaces.org/cdn/primeng/images/demo/rating/custom-icon.png" width="25px" height="25px" />
+  </ng-template>
+</p-rating>
+
+
+<p-password [(ngModel)]="value" [feedback]="true" [toggleMask]="true"></p-password> -->
+
+<form #f1="ngForm">
+  <div>
+    User Name:
+    <input type="text" [(ngModel)]="Name" name="fname" #n1="ngModel" required minlength="5">
+
+    <!-- <span *ngIf="n1.invalid && n1.touched">Name is required</span> -->
+    <span *ngIf="n1.errors?.['required'] && n1.touched">Name is required</span>
+
+
+    <!-- <span *ngIf="n1.errors?.['minlength'] && n1.touched">Name Length Must be greater than {{n1.errors?.['minlength']['requiredLength']}}</span> -->
+    <span *ngIf="n1.errors?.['minlength'] && n1.touched">Name Length Must be greater than {{n1.errors?.['minlength'].requiredLength}}</span>
+
+
+    <button (click)="show(n1)">Show</button>
+  </div>
+  <div>
+    Age:
+    <input type="number" [(ngModel)]="Age" name="age" #a1="ngModel" required>
+    <span *ngIf="a1.invalid && a1.touched">Age is required</span>
+    <button (click)="show(a1)">Show</button>
+  </div>
+</form>
+<button (click)="show(f1)">Show</button>
+{{f1.value | json}}

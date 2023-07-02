@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsApp", "Lab1\CarsApp.csproj", "{FB4C579A-980A-4624-B101-436AF1465CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAppTests", "CarAppTests\CarAppTests.csproj", "{0AFEA60B-6608-420B-927B-AE0D871AC6E3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB4C579A-980A-4624-B101-436AF1465CD3} = {FB4C579A-980A-4624-B101-436AF1465CD3}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB4C579A-980A-4624-B101-436AF1465CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB4C579A-980A-4624-B101-436AF1465CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB4C579A-980A-4624-B101-436AF1465CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB4C579A-980A-4624-B101-436AF1465CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AFEA60B-6608-420B-927B-AE0D871AC6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AFEA60B-6608-420B-927B-AE0D871AC6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AFEA60B-6608-420B-927B-AE0D871AC6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AFEA60B-6608-420B-927B-AE0D871AC6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A725F0F-E79D-498E-8F42-8722584BC46C}
+	EndGlobalSection
+EndGlobal
